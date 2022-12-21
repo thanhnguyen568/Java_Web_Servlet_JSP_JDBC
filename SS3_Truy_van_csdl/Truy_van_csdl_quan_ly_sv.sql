@@ -96,3 +96,12 @@ WHERE
 /*
 Hiển thị các thông tin: StudentName, SubName, Mark. Dữ liệu sắp xếp theo điểm thi (mark) giảm dần. nếu trùng sắp theo tên tăng dần.
 */
+
+select StudentName, SubName, Mark
+from student 
+inner join mark
+on mark.StudentID = student.StudentID
+inner join `subject`
+on `subject`.SubID = student.StudentID
+order by Mark desc, StudentName asc;
+
