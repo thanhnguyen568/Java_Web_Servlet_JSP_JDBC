@@ -377,11 +377,43 @@ group by hd.ma_hop_dong;
 /*Task11 - Hiển thị thông tin các dịch vụ đi kèm đã được sử dụng bởi những khách hàng có ten_loai_khach là “Diamond” 
 và có dia_chi ở “Vinh” hoặc “Quảng Ngãi”.*/
 
-select ma_dich_vu_di_kem,ten_dich_vụ_di_kem,ho_ten,ten_loai_khach
+select ma_dich_vu_di_kem,ten_dich_vụ_di_kem
 from dich_vu_di_kem
 inner join hop_dong_chi_tiet using(ma_dich_vu_di_kem)
 inner join hop_dong using(ma_hop_dong)
 inner join khach_hang using(ma_khach_hang)
-inner join loai_khach using(ma_loai_khach)
-where ten_loai_khach = 'Diamond' and dia_chi = ('Vinh' or 'Quảng Ngãi')
-group by ma_hop_dong
+where ma_loai_khach = '1' and dia_chi like '%Vinh%' or dia_chi like '%Quảng Ngãi%';
+
+/*Task12 - Hiển thị thông tin ma_hop_dong, ho_ten (nhân viên), ho_ten (khách hàng), so_dien_thoai (khách hàng), ten_dich_vu, so_luong_dich_vu_di_kem 
+(được tính dựa trên việc sum so_luong ở dich_vu_di_kem), tien_dat_coc của tất cả các dịch vụ đã từng được khách hàng đặt vào 3 tháng cuối năm 2020 nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2021.*/
+
+select ma_hop_dong, nv.ho_ten as ho_ten_nhan_vien, kh.ho_ten as ho_ten_khach_hang, kh.so_dien_thoai, ma_dich_vu, ten_dich_vu, if(sum(so_luong) is null,0,sum(so_luong))as so_luong_dich_vu_di_kem , tien_dat_coc
+from hop_dong
+inner join nhan_vien nv using (ma_nhan_vien)
+inner join khach_hang kh using (ma_khach_hang)
+inner join dich_vu dv using (ma_dich_vu)
+left join hop_dong_chi_tiet hdct using (ma_hop_dong)
+-- dùng left lấy luôn mã hợp đồng có thể null
+where exists (select tien_dat_coc from hop_dong where dv.ma_dich_vu = ma_dich_vu and year(ngay_lam_hop_dong) = 2020 and month(ngay_lam_hop_dong) in (10,11,12))
+and not exists (select tien_dat_coc from hop_dong where dv.ma_dich_vu = ma_dich_vu and year(ngay_lam_hop_dong) = 2021 and month(ngay_lam_hop_dong) between 1 and 6)
+group by ma_hop_dong;
+
+/*Task13 -	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).*/
+-- sum xong max -> dung temp
+
+with temp as (select ma_dich_vu_di_kem,ten_dich_vu_di_kem, sum(so_luong) as tong_so_luong
+from dich_vu_di_kem
+inner join hop_dong_chi_tiet using(ma_dich_vu_di_kem)
+group by ma_dich_vu_di_kem)
+select * from temp where tong_so_luong = (select max(tong_so_luong) from temp);
+
+/*Task14 - Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất.
+Thông tin hiển thị bao gồm ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).*/
+
+select ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, count(ma_dich_vu_di_kem) as so_lan_su_dung
+from hop_dong
+inner join dich_vu using(ma_dich_vu)
+inner join loai_dich_vu using(ma_loai_dich_vu)
+inner join hop_dong_chi_tiet hdct using (ma_hop_dong)
+inner join dich_vu_di_kem using (ma_dich_vu_di_kem)
+group by ma_hop_dong_chi_tiet,ma_dich_vu_di_kem
