@@ -308,7 +308,8 @@ group by k.ma_khach_hang
 order by sl_hop_dong asc;
 
 /*Task5 - Hiển thị ma_khach_hang, ho_ten, ten_loai_khach, ma_hop_dong, ten_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tong_tien 
-(Với tổng tiền được tính theo công thức như sau: Chi Phí Thuê + Số Lượng * Giá, với Số Lượng và Giá là từ bảng dich_vu_di_kem, hop_dong_chi_tiet) 
+(Với tổng tiền được tính theo công thức như sau: Chi Phí Thuê + Số Lượng * Giá, 
+với Số Lượng và Giá là từ bảng dich_vu_di_kem, hop_dong_chi_tiet) 
 cho tất cả các khách hàng đã từng đặt phòng. (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).*/
 
 select k.ma_khach_hang, k.ho_ten, l.ten_loai_khach, h.ma_hop_dong, d.ten_dich_vu, h.ngay_lam_hop_dong, h.ngay_ket_thuc, 
@@ -368,7 +369,8 @@ order by thang;
 Kết quả hiển thị bao gồm ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem 
 (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).*/
 
-select ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, if(sum(so_luong) is null, 0 ,sum(so_luong)) as so_luong_dich_vu_di_kem
+select ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, 
+if(sum(so_luong) is null, 0 ,sum(so_luong)) as so_luong_dich_vu_di_kem
 from hop_dong hd
 left join hop_dong_chi_tiet using(ma_hop_dong)
 left join dich_vu_di_kem using(ma_dich_vu_di_kem)
@@ -384,8 +386,10 @@ inner join hop_dong using(ma_hop_dong)
 inner join khach_hang using(ma_khach_hang)
 where ma_loai_khach = '1' and dia_chi like '%Vinh%' or dia_chi like '%Quảng Ngãi%';
 
-/*Task12 - Hiển thị thông tin ma_hop_dong, ho_ten (nhân viên), ho_ten (khách hàng), so_dien_thoai (khách hàng), ten_dich_vu, so_luong_dich_vu_di_kem 
-(được tính dựa trên việc sum so_luong ở dich_vu_di_kem), tien_dat_coc của tất cả các dịch vụ đã từng được khách hàng đặt vào 3 tháng cuối năm 2020 nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2021.*/
+/*Task12 - Hiển thị thông tin ma_hop_dong, ho_ten (nhân viên), ho_ten (khách hàng), so_dien_thoai (khách hàng), ten_dich_vu, 
+so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem), 
+tien_dat_coc của tất cả các dịch vụ đã từng được khách hàng đặt vào 3 tháng cuối năm 2020 
+nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2021.*/
 
 select ma_hop_dong, nv.ho_ten as ho_ten_nhan_vien, kh.ho_ten as ho_ten_khach_hang, kh.so_dien_thoai, ma_dich_vu, ten_dich_vu, if(sum(so_luong) is null,0,sum(so_luong))as so_luong_dich_vu_di_kem , tien_dat_coc
 from hop_dong
@@ -408,12 +412,46 @@ group by ma_dich_vu_di_kem)
 select * from temp where tong_so_luong = (select max(tong_so_luong) from temp);
 
 /*Task14 - Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất.
-Thông tin hiển thị bao gồm ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).*/
+Thông tin hiển thị bao gồm ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, 
+so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).*/
 
 select ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, count(ma_dich_vu_di_kem) as so_lan_su_dung
-from hop_dong
+from hop_dong_chi_tiet
+inner join dich_vu_di_kem using(ma_dich_vu_di_kem)
+inner join hop_dong using(ma_hop_dong)
 inner join dich_vu using(ma_dich_vu)
 inner join loai_dich_vu using(ma_loai_dich_vu)
-inner join hop_dong_chi_tiet hdct using (ma_hop_dong)
-inner join dich_vu_di_kem using (ma_dich_vu_di_kem)
-group by ma_hop_dong_chi_tiet,ma_dich_vu_di_kem
+where hop_dong_chi_tiet.ma_dich_vu_di_kem in 
+(select ma_dich_vu_di_kem 
+from hop_dong_chi_tiet 
+group by ma_dich_vu_di_kem 
+having count(ma_dich_vu_di_kem) = 1)
+group by hop_dong_chi_tiet.ma_hop_dong, hop_dong_chi_tiet.ma_hop_dong_chi_tiet;
+
+/*Task15 - Hiển thi thông tin của tất cả nhân viên bao gồm
+ ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi 
+ mới chỉ lập được tối đa 3 hợp đồng từ năm 2020 đến 2021..*/
+ 
+ select ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi
+ from nhan_vien
+ inner join trinh_do using(ma_trinh_do)
+ inner join vi_tri using(ma_vi_tri)
+ inner join bo_phan using(ma_bo_phan)
+ inner join hop_dong using(ma_nhan_vien)
+ group by ma_nhan_vien
+ having count(ma_hop_dong) <=3;
+ 
+ /*Task16 -	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021..*/
+ 
+ select ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi
+ from nhan_vien
+ inner join trinh_do using(ma_trinh_do)
+ inner join vi_tri using(ma_vi_tri)
+ inner join bo_phan using(ma_bo_phan)
+ inner join hop_dong using(ma_nhan_vien)
+ where exists(select nhan_vien.ma_nhan_vien from hop_dong)
+ and not exists (select nhan_vien.ma_nhan_vien from hop_dong 
+			where year(ngay_lam_hop_dong) between 2019 and 2021 and nhan_vien.ma_nhan_vien = hop_dong.ma_nhan_vien)
+ group by ma_nhan_vien
+ 
+ 
