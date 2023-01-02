@@ -398,7 +398,7 @@ thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.*/
 
 select 
 	month(ngay_lam_hop_dong) as thang, 
-    count(ma_hop_dong) as so_hop_dong
+	count(ma_hop_dong) as so_hop_dong
 from 
 	hop_dong
 where 
@@ -414,9 +414,9 @@ Kết quả hiển thị bao gồm ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc
 
 select 
 	ma_hop_dong, 
-    ngay_lam_hop_dong, 
-    ngay_ket_thuc, 
-    tien_dat_coc, 
+	ngay_lam_hop_dong, 
+	ngay_ket_thuc, 
+	tien_dat_coc, 
 	if(sum(so_luong) is null, 0 ,sum(so_luong)) as so_luong_dich_vu_di_kem
 from 
 	hop_dong hd
@@ -437,8 +437,8 @@ from
 	inner join khach_hang using(ma_khach_hang)
 where 
 	ma_loai_khach = '1' 
-    and dia_chi like '%Vinh%' 
-    or dia_chi like '%Quảng Ngãi%';
+	and dia_chi like '%Vinh%' 
+	or dia_chi like '%Quảng Ngãi%';
 
 /*Task 12 - Hiển thị thông tin ma_hop_dong, ho_ten (nhân viên), ho_ten (khách hàng), so_dien_thoai (khách hàng), ten_dich_vu, 
 so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem), 
@@ -447,13 +447,13 @@ nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2021.
 
 select 
 	ma_hop_dong, 
-    nv.ho_ten as ho_ten_nhan_vien, 
-    kh.ho_ten as ho_ten_khach_hang, 
-    kh.so_dien_thoai, 
-    ma_dich_vu, 
-    ten_dich_vu, 
-    if(sum(so_luong) is null,0,sum(so_luong)) as so_luong_dich_vu_di_kem, 
-    tien_dat_coc
+	nv.ho_ten as ho_ten_nhan_vien, 
+	kh.ho_ten as ho_ten_khach_hang, 
+	kh.so_dien_thoai, 
+	ma_dich_vu, 
+	ten_dich_vu, 
+	if(sum(so_luong) is null,0,sum(so_luong)) as so_luong_dich_vu_di_kem, 
+	tien_dat_coc
 from
 	hop_dong
 	inner join nhan_vien nv using (ma_nhan_vien)
@@ -469,7 +469,7 @@ where
 		where 
 			dv.ma_dich_vu = ma_dich_vu 
 			and year(ngay_lam_hop_dong) = 2020 
-            and month(ngay_lam_hop_dong) in (10,11,12) )
+			and month(ngay_lam_hop_dong) in (10,11,12) )
 	and not exists (
 		select
 			tien_dat_coc
@@ -477,8 +477,8 @@ where
 			hop_dong 
 		where 
 			dv.ma_dich_vu = ma_dich_vu 
-            and year(ngay_lam_hop_dong) = 2021 
-            and month(ngay_lam_hop_dong) between 1 and 6)
+			and year(ngay_lam_hop_dong) = 2021 
+			and month(ngay_lam_hop_dong) between 1 and 6)
 group by ma_hop_dong;
 
 /*Task 13 -	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).*/
@@ -531,17 +531,17 @@ group by hop_dong_chi_tiet.ma_hop_dong, hop_dong_chi_tiet.ma_hop_dong_chi_tiet;
  ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi 
  mới chỉ lập được tối đa 3 hợp đồng từ năm 2020 đến 2021..*/
  
- select 
+select 
 	ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi
- from 
+from 
 	nhan_vien
- inner join trinh_do using(ma_trinh_do)
- inner join vi_tri using(ma_vi_tri)
- inner join bo_phan using(ma_bo_phan)
- inner join hop_dong using(ma_nhan_vien)
- group by 
+	inner join trinh_do using(ma_trinh_do)
+	inner join vi_tri using(ma_vi_tri)
+	inner join bo_phan using(ma_bo_phan)
+	inner join hop_dong using(ma_nhan_vien)
+group by 
 	ma_nhan_vien
- having 
+having 
 	count(ma_hop_dong) <=3;
  
 /*Task 16 - Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.*/
@@ -597,18 +597,19 @@ where
 	not exists(
 		select 
 			*
-        from
+		from
 			hop_dong
 		where
 			kh.ma_khach_hang = ma_khach_hang
-            and year(ngay_lam_hop_dong) >= 2021
+			and year(ngay_lam_hop_dong) >= 2021
 	);
 
 /*Task 19.	Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.*/
 
 update 
 	dich_vu_di_kem
-set gia = gia * 2
+set 
+	gia = gia * 2
 where
 	ma_dich_vu_di_kem in (
 		select
@@ -689,7 +690,7 @@ CREATE PROCEDURE
 BEGIN
 	delete from
 		khach_hang
-    where
+	where
 		ma_khach_hang = p_ma_khach_hang;
 END; $$
 DELIMITER ;
