@@ -714,9 +714,40 @@ begin
 		max(ma_hop_dong) into lastid
 	from
 		hop_dong;
-
+	
+    if (p_ma_hop_dong <> lastid + 1) THEN
+		signal sqlstate '02000' set message_text = 'Invalid Id';
+    elseif (p_ngay_lam_hop_dong is null) THEN
+		signal sqlstate '02000' set message_text = 'Invalid Start Date';
+	elseif (p_ma_nhan_vien not in (select ma_nhan_vien from nhan_vien)) then
+		signal sqlstate '02000' set message_text = 'Invalid Ma Nhan Vien';
+	elseif (p_ma_khach_hang not in (select ma_khach_hang from khach_hang)) then
+		signal sqlstate '02000' set message_text = 'Invalid Mha Khach Hang';
+	elseif (p_ma_dich_vu not in (select ma_dich_vu from dich_vu)) then
+		signal sqlstate '02000' set message_text = 'Invalid Ma Dich Vu';
+	else 
+		insert into hop_dong (
+			ma_hop_dong,
+			ngay_lam_hop_dong,
+			ngay_ket_thuc,
+			tien_dat_coc,
+			ma_nhan_vien,
+			ma_khach_hang,
+			ma_dich_vu) 
+        value(
+			p_ma_hop_dong,
+            p_ngay_lam_hop_dong,
+            p_ngay_ket_thuc,
+            p_tien_dat_coc,
+            p_ma_nhan_vien,
+            p_ma_khach_hang,
+            p_ma_dich_vu);
+	end if;
+    
 end; $$
 DELIMITER $$
+
+
     
     
     
