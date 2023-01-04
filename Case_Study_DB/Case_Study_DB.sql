@@ -743,20 +743,69 @@ begin
             p_ma_khach_hang,
             p_ma_dich_vu);
 	end if;
-    
-end; $$
+end;
 DELIMITER $$
+
+call sp_xoa_khach_hang();
 
 /*Task 25.	Tạo Trigger có tên tr_xoa_hop_dong khi xóa bản ghi trong bảng hop_dong 
 thì hiển thị tổng số lượng bản ghi còn lại có trong bảng hop_dong ra giao diện console của database.
 Lưu ý: Đối với MySQL thì sử dụng SIGNAL hoặc ghi log thay cho việc ghi ở console.*/
 
 
-    
-    
-    
-    
-        
 
+/*Task 27. tạo function
+a.	Tạo Function func_dem_dich_vu: Đếm các dịch vụ đã được sử dụng với tổng tiền là > 2.000.000 VNĐ.
+b.	Tạo Function func_tinh_thoi_gian_hop_dong: Tính khoảng thời gian dài nhất tính từ lúc bắt đầu làm hợp đồng 
+đến lúc kết thúc hợp đồng mà khách hàng đã thực hiện thuê dịch vụ (lưu ý chỉ xét các khoảng thời gian 
+dựa vào từng lần làm hợp đồng thuê dịch vụ, không xét trên toàn bộ các lần làm hợp đồng). 
+Mã của khách hàng được truyền vào như là 1 tham số của function này.*/
 
+DELIMITER $$ 
+create function func_dem_dich_vu()
+returns int
+DETERMINISTIC
+begin
+	declare res int;
+    
+	select
+		count(*) into res
+	from (
+		select
+			sum(chi_phi_thue) tong_chi_phi_thue
+		from
+			dich_vu
+			inner join hop_dong using (ma_dich_vu)
+		group by ma_dich_vu
+		having tong_chi_phi_thue>2000000 
+	) as tmp;
+	return res;
+end;
+$$ DELIMITER ;
+select func_dem_dich_vu();
+
+DELIMITER $$ 
+create function func_tinh_thoi_gian_hop_dong(p_ma_khach_hang int) 
+returns int
+DETERMINISTIC
+begin
+	declare res int;
+	select
+		max(tmp.ngay) into res
+	from (
+		select
+			ma_khach_hang, timestampdiff(day,ngay_lam_hop_dong,ngay_ket_thuc) `ngay`
+		from
+			hop_dong
+	) as tmp
+	where ma_khach_hang = p_ma_khach_hang;
+return res;
+end ;
+$$ DELIMITER ;
+
+/*Task 28.	Tạo Stored Procedure sp_xoa_dich_vu_va_hd_room để tìm các dịch vụ được thuê 
+bởi khách hàng với loại dịch vụ là “Room” từ đầu năm 2015 đến hết năm 2019 
+để xóa thông tin của các dịch vụ đó (tức là xóa các bảng ghi trong bảng dich_vu) 
+và xóa những hop_dong sử dụng dịch vụ liên quan (tức là phải xóa những bản gi trong bảng hop_dong) 
+và những bản liên quan khác.*/
 
