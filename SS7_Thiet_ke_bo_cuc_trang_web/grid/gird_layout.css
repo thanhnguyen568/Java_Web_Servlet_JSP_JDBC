@@ -1,0 +1,82 @@
+body{
+    background: #F1F0EE;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 6fr 0.8fr 0.1fr;
+    grid-template-areas:
+            "nav nav nav nav"
+            "sidebar main main main"
+            "sidebar about about contact"
+            "sidebar footer footer footer";
+    gap: 0.5rem;
+    height: 100vh;
+    font-weight: 800;
+    font-size: 12px;
+    color: #004d40;
+    text-align: center;
+}
+
+nav{
+    background-color: #4b7bec;
+    grid-area: nav;
+}
+
+nav ul{
+    list-style: none;
+    font-size: 16px;
+    font-weight: bolder;
+    float: left;
+}
+
+li{
+    display: inline-block;
+}
+
+li a{
+    color: #ffffff;
+}
+
+a:hover{
+    color: #FF7F50;
+}
+
+main {
+    grid-area: main;
+}
+
+main h2 {
+    font-weight: bolder;
+}
+
+main p{
+    text-align: left;
+}
+
+.sidebar {
+    background: #D3D4D7;
+    grid-area: sidebar;
+}
+
+.about {
+    background: #D7D6D3;
+    grid-area: about;
+}
+
+.contact {
+    background: #BDBCBB;
+    grid-area: contact;
+}
+
+footer {
+    background: #4b7bec;
+    grid-area: footer;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+}

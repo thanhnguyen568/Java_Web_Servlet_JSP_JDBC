@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design</title>
+    <link rel="stylesheet" href="responsive_web_design.css">
+</head>
+<body>
+
+<div class="header" id="myHeader">
+<!--    <h1>Logo !</h1>-->
+    <ul class="row">
+        <a href="#">
+            <img src="img/logo1.png" style="width: 60px; height: 60px">
+        </a>
+        <h2> ZanZan Shop</h2>
+    </ul>
+</div>
+
+<div class="row">
+
+    <div class="col-2 col-m-3 menu">
+        <ul>
+            <li>Mỹ phẩm</li>
+            <li>Quần áo</li>
+            <li>Thực phẩm chức năng</li>
+            <li>#</li>
+            <li>#</li>
+            <li>#</li>
+            <li>#</li>
+            <li>#</li>
+            <li>#</li>
+            <li>#</li>
+            <li>#</li>
+            <li>#</li>
+            <li>#</li>
+
+
+        </ul>
+    </div>
+
+    <div class="col-8 col-m-9">
+        <h1>Information</h1>
+        <p>content.</p>
+    </div>
+
+    <div class="col-2 col-m-12">
+        <div class="aside">
+            <h2>What?</h2>
+            <p>Chania is a city on the island of Crete.</p>
+            <h2>Where?</h2>
+            <p>Crete is a Greek island in the Mediterranean Sea.</p>
+            <h2>How?</h2>
+            <p>You can reach Chania airport from all over Europe.</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Resize the browser window to see how the content respond to the resizing.</p>
+</div>
+
+<script>
+    window.onscroll = function() {myFunction()};
+
+    let header = document.getElementById("myHeader");
+    let sticky = header.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+</script>
+
+</body>
+</html>

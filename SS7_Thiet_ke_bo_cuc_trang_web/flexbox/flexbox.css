@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    display: flex;
+    width: 100vw;
+    height: 800px;
+    border: 5px solid grey;
+    flex-direction: row; /*default*/
+    flex-wrap: wrap; /*default*/
+    justify-content: flex-start; /*default*/
+    align-items: flex-start; /*default*/
+    /*flex-grow: 1;*/
+}
+.box {
+    padding: 10px;
+    height: 200px;
+    flex-basis: auto; /*default*/
+}
+.box p {
+    font-size: 20px;
+    color: white;
+}
+.box-1 {
+    background-color: #0a53be;
+    flex-grow: 0; /*default*/
+    order: 0; /*default*/
+}
+.box-2 {
+    background-color: #4f5050;
+}
+.box-3 {
+    background-color: #0dcaf0;
+}
