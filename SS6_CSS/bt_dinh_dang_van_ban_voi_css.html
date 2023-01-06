@@ -5,34 +5,53 @@
     <title>Định dạng văn bản với CSS</title>
     <style>
         h1{
-            padding-bottom: 1px;
+            margin: 0px;
+            padding: 0px;
         }
-        .class{
+
+        #id0{
+            text-decoration: overline;
 
         }
         #id1{
 
         }
+        .class1{
+            text-indent: 50px;
+        }
+        span{
+            font-weight: bold;
+        }
+        a:hover{
+            color: red;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <h1>Việt Nam</h1>
-    <p class ="class" >Bách khoa toàn thư mở wiki</p>
-    <p id = "id1" >Việt Nam, tên gọi chính thức là Cộng hòa Xã hội chủ nghĩa Việt Nam, là một quốc gia nằm ở cực Đông của bán đảo
-        Đông Dương thuộc khu vực Đông Nam Á, giáp với Lào, Campuchia, Trung Quốc, biển Đông và vịnh Thái Lan.</p>
-    <p id = "id2" >Cách mạng tháng Tám còn gọi là Tổng khởi nghĩa tháng Tám là tên gọi ngành sử học chính thống tại Việt Nam hiện
-        nay dùng để chỉ việc phong trào Việt Minh tiến hành khởi nghĩa chống Đế quốc Nhật Bản, buộc Đế quốc Việt Nam
-        bàn giao chính quyền trung ương và các địa phương và buộc Bảo Đại phải thoái vị trong tháng 8 năm 1945.
-        Việc chuyển giao quyền lực được Chính phủ Đế quốc Việt Nam thực hiện cơ bản trong hòa bình, ít có đụng độ
-        dù xảy ra tranh chấp với lực lượng Nhật, Đại Việt, Hòa Hảo,... ở một số địa phương. Trừ một số địa phương tỉnh
-        lỵ như Hải Ninh (nay thuộc Quảng Ninh), Hà Giang, Lào Cai, Lai Châu, Vĩnh Yên nằm trong tay các đảng phái khác
-        như Đại Việt, Việt Nam Quốc dân Đảng,... và quân Tưởng Giới Thạch (Trung Quốc); chỉ trong 10 ngày, cơ sở chính
-        quyền Việt Minh đã được thiết lập trên toàn bộ các tỉnh lỵ trên khắp Việt Nam (muộn nhất 28/8: Đồng Nai Thượng,
-        Hà Tiên), hầu hết địa phương trong cả nước. Một số nơi có khó khăn hơn như Hà Giang, quân Tưởng Giới Thạch bức
-        rút quân Nhật (29/8) và giải phóng luôn tỉnh này, Cao Bằng (giành chính quyền 21/8 nhưng sau đó quân Tưởng tràn
-        vào), Lạng Sơn (giành chính quyền sau đó quân Tưởng Giới Thạch tràn vào, tháng 10 mới thành lập chính quyền cách
-        mạng), Vĩnh Yên (Quốc dân Đảng nắm giữ), Hải Ninh – Móng Cái (Việt Nam Cách mệnh Đồng minh Hội nắm), một số địa
-        bàn ở Quảng Ninh (do Đại Việt, Việt Nam Cách mệnh Đồng minh Hội nắm), ở Đà Lạt (quân Nhật còn kháng cự mạnh như
+
+    <p id = "id0" >Bách khoa toàn thư mở wiki</p>
+
+    <p id = "id1" > <span>Việt Nam</span>, tên gọi chính thức là <span>Cộng hòa Xã hội chủ nghĩa Việt Nam</span>,
+        là một quốc gia nằm ở cực Đông của bán đảo <span>Đông Dương</span> thuộc khu vực <span>Đông Nam Á</span>,
+        giáp với <span>Lào, Campuchia, Trung Quốc, biển Đông và vịnh Thái Lan.</span></p>
+
+    <p class="class1"> <span>Cách mạng tháng Tám</span> còn gọi là <span>Tổng khởi nghĩa tháng Tám</span> là tên gọi ngành sử học chính thống tại
+        <span>Việt Nam</span> hiện nay dùng để chỉ việc phong trào <span>Việt Minh</span> tiến hành khởi nghĩa chống Đế quốc
+        <a href="https://vi.wikipedia.org/wiki/Nh%E1%BA%ADt_B%E1%BA%A3n">Nhật Bản</a>, buộc
+        Đế quốc <span>Việt Nam</span> bàn giao chính quyền trung ương và các địa phương và buộc <span>Bảo Đại</span> phải thoái vị trong tháng 8 4
+        năm 1945. Việc chuyển giao quyền lực được Chính phủ <span>Đế quốc Việt Nam</span> thực hiện cơ bản trong hòa bình, ít có đụng độ
+        dù xảy ra tranh chấp với lực lượng <span>Nhật, Đại Việt, Hòa Hảo,...</span> ở một số địa phương. Trừ một số địa phương tỉnh
+        lỵ như <span>Hải Ninh</span> (nay thuộc <span>Quảng Ninh</span>), <span>Hà Giang, Lào Cai, Lai Châu, Vĩnh Yên</span> nằm trong tay các đảng phái khác
+        như <span>Đại Việt, Việt Nam Quốc dân Đảng,...</span> và quân <span>Tưởng Giới Thạch (Trung Quốc)</span>; chỉ trong 10 ngày, cơ sở chính
+        quyền Việt Minh đã được thiết lập trên toàn bộ các tỉnh lỵ trên khắp Việt Nam (muộn nhất 28/8: <span>Đồng Nai Thượng,
+        Hà Tiên)</span>, hầu hết địa phương trong cả nước. Một số nơi có khó khăn hơn như <span>Hà Giang</span>, quân <span>Tưởng Giới Thạch</span> bức
+        rút quân Nhật (29/8) và giải phóng luôn tỉnh này, <span>Cao Bằng</span> (giành chính quyền 21/8 nhưng sau đó quân Tưởng tràn
+        vào), <span>Lạng Sơn </span>(giành chính quyền sau đó quân <span>Tưởng Giới Thạch</span> tràn vào, tháng 10 mới thành lập chính quyền cách
+        mạng), <span>Vĩnh Yên</span> (Quốc dân Đảng nắm giữ), <span>Hải Ninh – Móng Cái</span> (Việt Nam Cách mệnh Đồng minh Hội nắm), một số địa
+        bàn ở <span>Quảng Ninh</span> (do Đại Việt, Việt Nam Cách mệnh Đồng minh Hội nắm), ở <span>Đà Lạt</span> (quân Nhật còn kháng cự mạnh như
         ngày 3/10)...</p>
+
 </body>
 </html>
