@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook</title>
+    <style>
+        html {
+            background-color: #ecf0f1;
+        }
+        .container {
+            display: grid;
+            background-color: #ecf0f1;
+            height: 100vh;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 0.1fr 5fr;
+            grid-template-areas:
+                "header header header"
+                "nav section aside"
+        ;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            grid-area: header;
+            background-color: white;
+            box-shadow: black;
+            height: 70px;
+        }
+        header ul {
+            display: flex;
+            /*flex-direction: row;*/
+            justify-content: space-between;
+            align-items: center;
+            grid-template-columns: repeat(3,1fr);
+            padding: 0;
+            margin: 0;
+        }
+        nav {
+            grid-area: nav;
+            /*text-align: center;*/
+        }
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        section {
+            grid-area: section;
+            text-align: center;
+        }
+        article {
+            border: 1px solid white;
+            margin: 50px;
+        }
+        aside {
+            grid-area: aside;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <ul>
+            <img src="https://1000logos.net/wp-content/uploads/2016/11/Facebook-Logo-Meaning.jpg"
+                 alt="Facebook" style="width: 200px; height: 70px">
+            <div class="search">
+                <input type="search" placeholder="Search" style="text-align: center; justify-content: center">
+                <button type="submit">Search</button>
+            </div>
+            <div>
+                <h3>user</h3>
+            </div>
+        </ul>
+    </header>
+
+    <nav>
+        <h3>Bảng feed</h3>
+        <ul>
+            <li>Bạn bè</li>
+            <li>Nhóm</li>
+            <li>Trang</li>
+        </ul>
+    </nav>
+
+    <section>
+        <h3>Bạn đang nghĩ gì ?</h3>
+        <article>
+            <p>Nội dung 1</p>
+        </article>
+        <article>
+            <p>Nội dung 2</p>
+        </article>
+        <article>
+            <p>Nội dung 3</p>
+        </article>
+        <article>
+            <p>Nội dung 1</p>
+        </article>
+        <article>
+            <p>Nội dung 2</p>
+        </article>
+        <article>
+            <p>Nội dung 3</p>
+        </article>
+        <article>
+            <p>Nội dung 1</p>
+        </article>
+        <article>
+            <p>Nội dung 2</p>
+        </article>
+        <article>
+            <p>Nội dung 3</p>
+        </article>
+        <article>
+            <p>Nội dung 1</p>
+        </article>
+        <article>
+            <p>Nội dung 2</p>
+        </article>
+        <article>
+            <p>Nội dung 3</p>
+        </article>
+        <article>
+            <p>Nội dung 1</p>
+        </article>
+        <article>
+            <p>Nội dung 2</p>
+        </article>
+        <article>
+            <p>Nội dung 3</p>
+        </article>
+    </section>
+
+    <aside>
+        <h3>Quảng cáo nè</h3>
+    </aside>
+</div>
+</body>
+</html>

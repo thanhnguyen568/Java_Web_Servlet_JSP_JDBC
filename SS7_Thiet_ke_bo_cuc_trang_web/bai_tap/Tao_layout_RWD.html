@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout RWD</title>
+    <style>
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+        /*@media only screen and (orientation: landscape) {*/
+        /*    .col-m-1 {width: 8.33%;}*/
+        /*    .col-m-2 {width: 16.66%;}*/
+        /*    .col-m-3 {width: 25%;}*/
+        /*    .col-m-4 {width: 33.33%;}*/
+        /*    .col-m-5 {width: 41.66%;}*/
+        /*    .col-m-6 {width: 50%;}*/
+        /*    .col-m-7 {width: 58.33%;}*/
+        /*    .col-m-8 {width: 66.66%;}*/
+        /*    .col-m-9 {width: 75%;}*/
+        /*    .col-m-10 {width: 83.33%;}*/
+        /*    .col-m-11 {width: 91.66%;}*/
+        /*    .col-m-12 {width: 100%;}*/
+            /*body {*/
+            /*    background-color: lightblue;*/
+            /*}*/
+        /*}*/
+        /*@media only screen and (max-width: 420px) {*/
+        /*    !* For tablets: *!*/
+        /*    .col-m-1 {width: 8.33%;}*/
+        /*    .col-m-2 {width: 16.66%;}*/
+        /*    .col-m-3 {width: 25%;}*/
+        /*    .col-m-4 {width: 33.33%;}*/
+        /*    .col-m-5 {width: 41.66%;}*/
+        /*    .col-m-6 {width: 50%;}*/
+        /*    .col-m-7 {width: 58.33%;}*/
+        /*    .col-m-8 {width: 66.66%;}*/
+        /*    .col-m-9 {width: 75%;}*/
+        /*    .col-m-10 {width: 83.33%;}*/
+        /*    .col-m-11 {width: 91.66%;}*/
+        /*    .col-m-12 {width: 100%;}*/
+        /*}*/
+        @media only screen and (min-width: 1280px) {
+            /* For desktop: */
+            .col-1 {width: 8.33%;}
+            .col-2 {width: 16.66%;}
+            .col-3 {width: 25%;}
+            .col-4 {width: 33.33%;}
+            .col-5 {width: 41.66%;}
+            .col-6 {width: 50%;}
+            .col-7 {width: 58.33%;}
+            .col-8 {width: 66.66%;}
+            .col-9 {width: 75%;}
+            .col-10 {width: 83.33%;}
+            .col-11 {width: 91.66%;}
+            .col-12 {width: 100%;}
+        }
+        .row {
+            display: flex;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #ecf0f1;
+        }
+        header {
+            display: flex;
+            background-color: black;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        footer {
+            display: flex;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            float: left;
+        }
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        section {
+            background-color: white;
+            float: left;
+        }
+        aside {
+            text-align: center;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="col-12 col-m-12 row">
+            <ul class="col-1">Logo</ul>
+            <ul class="col-1">Home</ul>
+            <ul class="col-1">About</ul>
+            <ul class="col-1">Project</ul>
+            <ul class="col-1">Contact</ul>
+            <ul class="col-6"></ul>
+            <ul class="col-1">Login</ul>
+        </header>
+
+        <main class="col-12">
+            <nav class="col-2 col-m-12">
+                <ul>
+                    <a href="#">Link</a>
+                    <a href="#">Link</a>
+                    <a href="#">Link</a>
+                </ul>
+            </nav>
+
+            <section class="col-8 col-m-12">
+                <article>
+                    <h2>Welcome</h2>
+                    <p>Panda is the simple free news reader. Discover the best tools, resources and inspiration in the world of design and tech.</p>
+                </article>
+                <hr>
+                <article>
+                    <h3>Test</h3>
+                    <p>Bring it all together and stay on top of it all.</p>
+                </article>
+                <article>
+                    <h3>Test</h3>
+                    <p>Bring it all together and stay on top of it all.</p>
+                </article>
+                <article>
+                    <h3>Test</h3>
+                    <p>Bring it all together and stay on top of it all.</p>
+                </article>
+                <article>
+                    <h3>Test</h3>
+                    <p>Bring it all together and stay on top of it all.</p>
+                </article>
+                <article>
+                    <h3>Test</h3>
+                    <p>Bring it all together and stay on top of it all.</p>
+                </article>
+                <article>
+                    <h3>Test</h3>
+                    <p>Bring it all together and stay on top of it all.</p>
+                </article>
+                <article>
+                    <h3>Test</h3>
+                    <p>Bring it all together and stay on top of it all.</p>
+                </article>
+                <article>
+                    <h3>Test</h3>
+                    <p>Bring it all together and stay on top of it all.</p>
+                </article>
+
+            </section>
+
+            <aside class="col-2 col-m-12">
+                <h3>ADS</h3>
+                <h3>ADS</h3>
+            </aside>
+        </main>
+
+        <footer class="col-12">
+            <h4 class="col-12">Footer text</h4>
+        </footer>
+    </div>
+</body>
+</html>
