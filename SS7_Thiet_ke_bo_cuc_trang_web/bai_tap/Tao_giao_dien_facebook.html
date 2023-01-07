@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo giao diện facebook</title>
+    <style>
+        [class*="col-"] {
+            width: 100%;
+        }
+        @media only screen and (orientation: landscape) {
+            .col-m-1 {width: 8.33%;}
+            .col-m-2 {width: 16.66%;}
+            .col-m-3 {width: 25%;}
+            .col-m-4 {width: 33.33%;}
+            .col-m-5 {width: 41.66%;}
+            .col-m-6 {width: 50%;}
+            .col-m-7 {width: 58.33%;}
+            .col-m-8 {width: 66.66%;}
+            .col-m-9 {width: 75%;}
+            .col-m-10 {width: 83.33%;}
+            .col-m-11 {width: 91.66%;}
+            .col-m-12 {width: 100%;}
+            /*body {*/
+            /*    background-color: lightblue;*/
+            /*}*/
+        }
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+            .col-m-1 {width: 8.33%;}
+            .col-m-2 {width: 16.66%;}
+            .col-m-3 {width: 25%;}
+            .col-m-4 {width: 33.33%;}
+            .col-m-5 {width: 41.66%;}
+            .col-m-6 {width: 50%;}
+            .col-m-7 {width: 58.33%;}
+            .col-m-8 {width: 66.66%;}
+            .col-m-9 {width: 75%;}
+            .col-m-10 {width: 83.33%;}
+            .col-m-11 {width: 91.66%;}
+            .col-m-12 {width: 100%;}
+        }
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+            .col-1 {width: 8.33%;}
+            .col-2 {width: 16.66%;}
+            .col-3 {width: 25%;}
+            .col-4 {width: 33.33%;}
+            .col-5 {width: 41.66%;}
+            .col-6 {width: 50%;}
+            .col-7 {width: 58.33%;}
+            .col-8 {width: 66.66%;}
+            .col-9 {width: 75%;}
+            .col-10 {width: 83.33%;}
+            .col-11 {width: 91.66%;}
+            .col-12 {width: 100%;}
+        }
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 0.1fr 1fr 1fr 1fr;
+            grid-template-rows: 0.25fr 1fr 1fr 0.2fr;
+            grid-template-areas:
+                    "h h h h"
+                    "m m m m"
+                    "m m m m"
+                    "f f f f";
+            gap: 0.5rem;
+            height: 100vh;
+            font-weight: 800;
+            font-size: 12px;
+            color: #004d40;
+            text-align: center;
+        }
+        html {
+            padding: 0;
+            margin: 0;
+            font-family: "Lucida Sans", sans-serif;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        header {
+            background-color: #0a53be;
+            grid-area: h;
+        }
+        main {
+            display: flex;
+            grid-area: m;
+        }
+        aside {
+            background-color: gold;
+            flex: 20%;
+        }
+        section {
+            background-color: darkred;
+            flex: 80%;
+        }
+        footer {
+            background-color: grey;
+            grid-area: f;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <nav>
+            <h3>Header</h3>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <h3>Sidebar</h3>
+        </aside>
+
+        <section>
+            <h3>Section</h3>
+            <article>
+                <p>...</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <h3>Footer</h3>
+    </footer>
+</div>
+</body>
+</html>
