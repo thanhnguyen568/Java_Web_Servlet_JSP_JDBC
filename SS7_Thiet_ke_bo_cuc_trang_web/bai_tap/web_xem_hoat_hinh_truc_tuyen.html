@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoạt hình</title>
+    <style>
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+            .col-1 {width: 8.33%;}
+            .col-2 {width: 16.66%;}
+            .col-3 {width: 25%;}
+            .col-4 {width: 33.33%;}
+            .col-5 {width: 41.66%;}
+            .col-6 {width: 50%;}
+            .col-7 {width: 58.33%;}
+            .col-8 {width: 66.66%;}
+            .col-9 {width: 75%;}
+            .col-10 {width: 83.33%;}
+            .col-11 {width: 91.66%;}
+            .col-12 {width: 100%;}
+        }
+        body {
+            background-color: white;
+        }
+        header {
+            display: flex;
+            height: 50px;
+            background-color: #f5f5f5;
+            color: white;
+            position: sticky;
+            top: 0;
+            margin: 0;
+
+        }
+        footer {
+            display: flex;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        nav {
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            position: sticky;
+            top: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            /*margin: 10px;*/
+        }
+        ul li {
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+        }
+        section {
+            /*background-color: wheat;*/
+            float: left;
+            padding: 0;
+            margin: 0;
+        }
+        section article{
+            justify-content: center;
+            padding: 10px;
+        }
+        main {
+            /*background-color: wheat;*/
+            float: left;
+            padding: 0;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img\logo.PNG" alt="">
+    </header>
+
+    <nav class="col-12 ">
+        <ul>
+            <li><a href="#">Phim hoạt hình</a></li>
+            <li><a href="#">| Phim hoạt hình yêu thích</a></li>
+            <li><a href="#">| Nhân vật hoạt hình</a></li>
+            <li><a href="#">| Góp ý</a></li>
+        </ul>
+    </nav>
+
+    <div class="content col-12">
+        <section class="col-3">
+            <article>
+                <iframe width="400" height="220" src="https://www.youtube.com/embed/wdTcaJhidac" title="[S8] Doraemon Tập 388 - Gulliver Rắc Rối, Nobita Người Nổi Tiếng Của Khu Phố - Hoạt Hình Tiếng Việt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </article>
+            <article>
+                <iframe width="400" height="220" src="https://www.youtube.com/embed/KjvxJJ_G1EA" title="[S5] Doraemon - Tập 230 - Đổi Mẹ Cho Nhau, Nobita Sắp Biến Mất - Hoạt Hình Tiếng Việt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </article>
+            <article>
+                <iframe width="400" height="220" src="https://www.youtube.com/embed/QtWmamNUgig" title="[S8] Doraemon Tập 396 - Cưỡi Mây Đến Trường, Nhà Mình, Chuyến Tàu Đêm - Hoạt Hình Tiếng Việt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </article>
+            <article>
+                <iframe width="400" height="220" src="https://www.youtube.com/embed/xMjq8KvYZ00" title="[S7] Doraemon Tập 330 - Máy Bay Côn Trùng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </article>
+        </section>
+
+        <main class="col-9" >
+            <article>
+                <iframe width="75%" height="500" src="https://www.youtube.com/embed/OXTyiAgQnnY" title="[S9] Doraemon - Tập 433-Siêu Anh Hùng Côn Trùng Tới Rồi Đây - Chiếc Nón Thu Nhỏ-Hoạt Hình Tiếng Việt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </article>
+            <article>
+                <h3>12.597.142 lượt xem  Đã công chiếu vào 5 thg 7, 2022</h3>
+                <P>[S9] Doraemon - Tập 433-Siêu Anh Hùng Côn Trùng Tới Rồi Đây - Chiếc Nón Thu Nhỏ-Hoạt Hình Tiếng Việt
+                    Trọn Bộ Hoạt Hình Doraemon 260 tập tại đây: https://goo.gl/HQMXKr
+                    Kênh POPS Kids
+                    Kênh thiếu nhi hàng đầu trên YouTube với các video nhạc thiếu nhi, hoạt hình nổi tiếng, các chương trình giáo dục bổ ích và nhiều nội dung thú vị khác. Nhấn subscribe để theo dõi nhiều sản phẩm mới trên POPS Kids.
+                </P>
+            </article>
+        </main>
+    </div>
+
+    <footer class="col-12">
+        <h3 class="col-12">&copy;2023 Thiết kế web bởi Thành Nguyễn</h3>
+    </footer>
+</body>
+</html>
