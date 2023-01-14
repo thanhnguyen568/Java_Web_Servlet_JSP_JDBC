@@ -1,25 +1,19 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE HTML>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<style type="text/css">
-    .login {
-        height:180px; width:230px;
-        margin:0;
-        padding:10px;
-        border:1px #CCC solid;
-    }
-    .login input {
-        padding:5px; margin:5px
-    }
-</style>
+<head>
+    <title>Product Discount Calculator</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 <body>
-<form>
-    <div class="login">
-        <h2>Login</h2>
-        <input type="text" name="username" size="30"  placeholder="username" />
-        <input type="password" name="password" size="30" placeholder="password" />
-        <input type="submit" value="Sign in"/>
-    </div>
+<h2>Currency Converter</h2>
+<form action="/DiscountServlet" method="post">
+    <label>Product Description: </label><br/>
+    <input type="text" name="productDescription" placeholder="Apple" value=""/><br/>
+    <label>List Price: </label><br/>
+    <input type="text" name="listPrice" placeholder="0" value=""/><br/>
+    <label>Discount Percent: </label><br/>
+    <input type="text" name="discountPercent" placeholder="0%" value=""/><br/>
+    <input type = "submit" id = "submit" value = "Converter"/>
 </form>
 </body>
 </html>
