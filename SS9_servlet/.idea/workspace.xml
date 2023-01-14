@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c7f4f8ef-c1a9-49e0-954d-14ca035908db" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../SS0_Case_Study_DB/Case_Study_DB.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS0_Case_Study_DB/ERD.mwb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS1_CSDL/ss1_tao_csdl_quan_ly_giao_vien.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS2_Thiet_ke_va_tao_CSDL/SS2_Diagram.drawio.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS2_Thiet_ke_va_tao_CSDL/SS2_QuanLyBanHang.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS3_Truy_van_csdl/SS3_Quan_ly_ban_hang.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS3_Truy_van_csdl/SS3_Truy_van_csdl_quan_ly_sv.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS4_Su_dung_cac_ham_thong_dung/SS4_Truy_van_csdl_quan_ly_sv.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS5_View_Index_Stored_Procedure/SS5_View_Index_SP.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS5_View_Index_Stored_Procedure/mysqlsampledatabase.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS6_CSS/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS6_CSS/.idea/SS6_CSS.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS6_CSS/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS6_CSS/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS6_CSS/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS6_CSS/bt_dinh_dang_van_ban_voi_css.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS6_CSS/bt_nhung_css_vao_html.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS6_CSS/bt_nhung_css_vao_html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS6_CSS/bt_tao_muc_luc_truyen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS6_CSS/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/.idea/SS7_Thiet_ke_bo_cuc_trang_web.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/bai_tap/Tao_giao_dien_gian_luoc_face_book.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/bai_tap/Tao_layout_RWD.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/bai_tap/Tao_layout_voi_the_html5_css.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/bai_tap/img/logo.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/bai_tap/web_xem_hoat_hinh_truc_tuyen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/flexbox/flexbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/flexbox/flexbox.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/grid/gird_layout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/grid/grid_layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/responsive/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/responsive/responve.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/responsive_web_design/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/responsive_web_design/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/responsive_web_design/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/responsive_web_design/.idea/responsive_web_design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/responsive_web_design/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/responsive_web_design/img/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/responsive_web_design/img/logo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/responsive_web_design/responsive_web_design.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS7_Thiet_ke_bo_cuc_trang_web/responsive_web_design/responsive_web_design.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/.idea/SS8_bootstrap.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/gallery_bootstrap/gallery_bootstrap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/bootstrap-4.6.2-dist/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/images/Surface_Home_23_Jan_Hero_1920x1080.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/images/microsoft-gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/jquery/jquery-3.5.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/jquery/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/langdingpage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/landing_Page/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/thuc_hanh/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS8_bootstrap/thuc_hanh/thuc_hanh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/ss9_servlet/ConverterServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/ss9_servlet/DiscountServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/ss9_servlet/HelloServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/ss9_servlet/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/SS9_servlet-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ss9_servlet/DiscountServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ss9_servlet/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2KIvMYaT3WFuElEIT8EBqogwyPF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/CodeGym/Module3_Sql_CSS_SERVLET_JSP_JDBC/SS9_servlet",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Gradle : com.example : SS9_servlet-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="12d026b4-c3d6-4885-a354-6e93f2191c85" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52152" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com.example : SS9_servlet-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c7f4f8ef-c1a9-49e0-954d-14ca035908db" name="Changes" comment="" />
+      <created>1673674863351</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673674863351</updated>
+      <workItem from="1673674864603" duration="8133000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
