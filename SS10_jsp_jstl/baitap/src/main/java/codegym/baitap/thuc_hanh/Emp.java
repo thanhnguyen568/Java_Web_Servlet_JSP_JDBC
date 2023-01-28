@@ -1,4 +1,4 @@
-package codegym.baitap;
+package codegym.baitap.thuc_hanh;
 
 import java.text.DateFormat;
 import java.text.ParseException;

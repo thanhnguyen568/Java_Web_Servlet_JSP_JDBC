@@ -1,4 +1,4 @@
-package codegym.baitap;
+package codegym.baitap.thuc_hanh;
 
 import java.util.HashSet;
 import java.util.Set;

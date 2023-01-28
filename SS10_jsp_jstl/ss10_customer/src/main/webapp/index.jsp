@@ -13,8 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <style>
         /*
     DEMO STYLE
@@ -203,102 +202,57 @@
     <!-- Sidebar  -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3>Main menu</h3>
+            <h3><a href="http://localhost:8080/">Main menu</a></h3>
         </div>
 
         <ul class="list-unstyled components">
+
             <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Customer</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
+
                     <li>
-                        <a href="#">Home 1</a>
+                        <a href="/CustomerServlet">Display</a>
                     </li>
 
                     <li>
-                        <a href="#">Home 2</a>
+                        <a href="#">Create</a>
                     </li>
 
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
                 </ul>
             </li>
 
-            <li>
-                <a href="#">About</a>
-            </li>
-
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-
-            <li>
-                <a href="#">Contact</a>
-            </li>
         </ul>
     </nav>
 
     <!-- Page Content  -->
     <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                    <i class="fas fa-align-left"></i>
-                    <span>Toggle Sidebar</span>
-                </button>
-                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-align-justify"></i>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/JstlCoreEx01Servlet">Page</a>
-                        </li>
+        <h2>Danh sách khách hàng</h2>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="/JstlCoreEx02Servlet">Page</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Page</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Page</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <h2>Departments and Employees</h2>
-
-        <!-- Dùng for để duyệt trên các phòng ban (departments) -->
-        <c:forEach items="${departments}" var="dept">
-            <h3>${dept.deptName}</h3>
-            <ul>
-                <!-- Dùng for để duyệt trên các nhân viên
-                            thuộc phòng ban hiện tại -->
-                <c:forEach items="${dept.employees}" var="emp">
-                    <li>
-                            ${emp.empName} - (${emp.job})
-                    </li>
-                </c:forEach>
-            </ul>
-
-        </c:forEach>
-
-        <div class="line"></div>
-
-        <h2>Lorem Ipsum Dolor</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.</p>
+        <!-- Dùng for để duyệt trên các khách hàng -->
+        <table class="table bg-info border-light">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Birthday</th>
+                <th scope="col">Address</th>
+                <th scope="col">Photo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${customers}" var="cus">
+            <tr>
+                <td>${cus.name}</td>
+                <td>${cus.birthday}</td>
+                <td>${cus.address}</td>
+                <td>${cus.photo}</td>
+                <td>
+                    <img style="width: 150px;height: 200px" src="${pageContext.request.contextPath}${cus.photo}">
+                </td>
+            </tr>
+            </c:forEach>
+        </table>
 
         <div class="line"></div>
 
@@ -307,24 +261,9 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-        crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-        });
-    });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

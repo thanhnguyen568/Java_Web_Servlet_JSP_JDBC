@@ -1,4 +1,4 @@
-package codegym.baitap;
+package codegym.baitap.thuc_hanh;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -25,7 +25,7 @@ public class JstlCoreEx01Servlet extends HttpServlet {
         // Tạo đối tượng RequestDispatcher
         // để Forward (chuyển tiếp) yêu cầu tới jstl_core_example01.jsp
         RequestDispatcher dispatcher = getServletContext()
-                .getRequestDispatcher("/jstl_core_example01.jsp");
+                .getRequestDispatcher("/index.jsp");
 
         // Forward (Chuyển tiếp) yêu cầu, để hiển thị dữ liệu trên trang JSP.
         dispatcher.forward(request, response);
