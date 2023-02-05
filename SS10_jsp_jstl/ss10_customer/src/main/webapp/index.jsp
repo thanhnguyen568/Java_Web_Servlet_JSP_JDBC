@@ -1,7 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
-
-<!-- Khai báo sử dụng JSTL Core Tags -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!doctype html>
@@ -248,7 +245,7 @@
                 <td>${cus.address}</td>
                 <td>${cus.photo}</td>
                 <td>
-                    <img style="width: 150px;height: 200px" src="${pageContext.request.contextPath}${cus.photo}">
+                    <img style="width: 150px;height: 200px" src="${cus.photo}">
                 </td>
             </tr>
             </c:forEach>

@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a83026e-d221-4bdf-96ce-891f0bc653f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/baitap/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SS09_servlet/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10_calculate/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10_customer/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SS11_mvc/SS11_product/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SS12_JDBC/SS12_user/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../SS09_servlet/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../SS09_servlet/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../SS09_servlet/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../SS09_servlet/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../SS09_servlet/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../SS09_servlet/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/build/classes/java/main/com/example/ss9_servlet/ConverterServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/build/classes/java/main/com/example/ss9_servlet/DiscountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SS09_servlet/build/classes/java/main/com/example/ss9_servlet/DiscountServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/build/classes/java/main/com/example/ss9_servlet/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/build/libs/SS9_servlet-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../SS09_servlet/build/libs/SS9_servlet-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../SS09_servlet/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/src/main/java/com/example/ss9_servlet/DiscountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SS09_servlet/src/main/java/com/example/ss9_servlet/DiscountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS09_servlet/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SS09_servlet/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss10_customer/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ss10_customer/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss10_customer/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ss10_customer/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS11_mvc/SS11_product/src/main/webapp/product/delete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SS11_mvc/SS11_product/src/main/webapp/product/delete.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS11_mvc/SS11_product/src/main/webapp/product/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SS11_mvc/SS11_product/src/main/webapp/product/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS12_JDBC/SS12_user/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SS12_JDBC/SS12_user/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS12_JDBC/SS12_user/src/main/webapp/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SS12_JDBC/SS12_user/src/main/webapp/user/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/baitap" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -33,6 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1673840553698</updated>
       <workItem from="1673840555232" duration="21000" />
+      <workItem from="1675427617113" duration="25000" />
     </task>
     <servers />
   </component>

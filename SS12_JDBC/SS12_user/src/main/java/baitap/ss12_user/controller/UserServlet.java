@@ -1,6 +1,6 @@
 package baitap.ss12_user.controller;
 
-import baitap.ss12_user.dao.UserDAO;
+import baitap.ss12_user.repository.UserRepositoryImpl;
 import baitap.ss12_user.model.User;
 
 import javax.servlet.*;
@@ -13,10 +13,10 @@ import java.util.List;
 @WebServlet(name = "UserServlet", urlPatterns = "/users")
 public class UserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private UserDAO userDAO;
+    private UserRepositoryImpl userDAO;
 
     public void init() {
-        userDAO = new UserDAO();
+        userDAO = new UserRepositoryImpl();
     }
 
     @Override

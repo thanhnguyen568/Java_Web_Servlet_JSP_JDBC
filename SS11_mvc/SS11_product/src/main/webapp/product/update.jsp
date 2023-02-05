@@ -19,23 +19,23 @@
         <table>
             <tr>
                 <td>Id: </td>
-                <td><input type="text" name="id" id="id" value="${requestScope["product"].getId()}"></td>
+                <td><input type="text" name="id" id="id" value="${product.id}"></td>
             </tr>
             <tr>
                 <td>Name: </td>
-                <td><input type="text" name="nameProduct" id="nameProduct" value="${requestScope["product"].getNameProduct()}"></td>
+                <td><input type="text" name="nameProduct" id="nameProduct" value="${product.nameProduct}"></td>
             </tr>
             <tr>
                 <td>Price: </td>
-                <td><input type="text" name="price" id="price" value="${requestScope["product"].getPrice()}"></td>
+                <td><input type="text" name="price" id="price" value="${product.price}"></td>
             </tr>
             <tr>
                 <td>Description: </td>
-                <td><input type="text" name="description" id="description" value="${requestScope["product"].getDescription()}"></td>
+                <td><input type="text" name="description" id="description" value="${product.description}"></td>
             </tr>
             <tr>
                 <td>Manufacturer: </td>
-                <td><input type="text" name="manufacturer" id="manufacturer" value="${requestScope["product"].getManufacturer()}"></td>
+                <td><input type="text" name="manufacturer" id="manufacturer" value="${product.manufacturer}"></td>
             </tr>
             <tr>
                 <td></td>

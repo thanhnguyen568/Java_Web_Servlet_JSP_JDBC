@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Currency Converter</h2>
-<form action="/DiscountServlet" method="post">
+<form action="/discount" method="post">
     <label>Product Description: </label><br/>
     <input type="text" name="productDescription" placeholder="Apple" value=""/><br/>
     <label>List Price: </label><br/>

@@ -16,7 +16,7 @@
         <table border="1" cellpadding="5">
             <caption>
                 <h2>
-                    Edit User
+                    Delete User
                 </h2>
             </caption>
             <c:if test="${user != null}">
@@ -25,24 +25,24 @@
             <tr>
                 <th>User Name:</th>
                 <td>
-                    <input type="text" name="name" size="45" value="<c:out value='${user.name}' />"/>
+                    <input type="button" disabled name="name" size="45" value="<c:out value='${user.name}' />"/>
                 </td>
             </tr>
             <tr>
                 <th>User Email:</th>
                 <td>
-                    <input type="text" name="email" size="45" value="<c:out value='${user.email}' />"/>
+                    <input type="button" disabled name="email" size="45" value="<c:out value='${user.email}' />"/>
                 </td>
             </tr>
             <tr>
                 <th>Country:</th>
                 <td>
-                    <input type="text" name="country" size="15" value="<c:out value='${user.country}' />"/>
+                    <input type="button" disabled name="country" size="15" value="<c:out value='${user.country}' />"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" value="Save"/>
+                    <input type="submit" value="Delete"/>
                 </td>
             </tr>
         </table>
