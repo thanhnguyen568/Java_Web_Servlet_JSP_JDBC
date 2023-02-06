@@ -11,15 +11,29 @@
         <a href="/users?action=create">Add New User</a>
     </h2>
     <h2>
-        <label>
-            <input type="text">
-        </label>
-        <input type="submit">
+        <form action="/users">
+            <input name="find">
+            <input type="hidden" name="action" value="find">
+            <button>Search</button>
+        </form>
+
     </h2>
 </center>
 <div align="center">
     <table border="1" cellpadding="5">
         <caption><h2>List of Users</h2></caption>
+        <tr>
+            <th></th>
+            <th>
+                <form action="/users">
+                    <button>Sort</button>
+                    <input type="hidden" name="action" value="sort">
+                </form>
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
         <tr>
             <th>ID</th>
             <th>Name</th>

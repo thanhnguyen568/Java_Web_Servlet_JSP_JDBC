@@ -34,4 +34,13 @@ public class UserServiceImpl implements UserService {
     public boolean updateUser(User user) throws SQLException {
         return repository.updateUser(user);
     }
+
+    public List<User> selectUserByCountry(String country) {
+        return repository.selectUserByCountry(country);
+    }
+
+    public List<User> sortUserByName(){
+        return repository.sortUserByName();
+    }
 }
+

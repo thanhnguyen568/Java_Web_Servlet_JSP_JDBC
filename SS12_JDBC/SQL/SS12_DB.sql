@@ -16,9 +16,11 @@ insert into users(name, email, country)
     
 select * from users where id = 2;
 
-delete from users where id = 2;
+delete from users where name = 'Huy';
 
 update users
 set name = 1, email= '', country='';
 
-select * from users where country = 'Viet Nam';
+select * from users where `name` like '%?%';
+
+select * from users order by `name` asc
