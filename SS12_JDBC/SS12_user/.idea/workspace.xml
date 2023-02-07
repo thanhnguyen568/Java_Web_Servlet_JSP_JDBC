@@ -5,15 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2ce32cd-7c46-41e8-af87-98b0092bffee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../users/src/main/java/baitap/users/controller/UserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../users/src/main/java/baitap/users/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../users/src/main/java/baitap/users/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../users/src/main/java/baitap/users/repository/UserRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../users/src/main/java/baitap/users/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../users/src/main/java/baitap/users/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../users/src/main/webapp/user/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../users/src/main/webapp/user/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../users/src/main/webapp/user/update.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +25,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/CodeGym/Module3_Sql_CSS_SERVLET_JSP_JDBC/SQL_CSS_SERVLET_JSP_JDBC/SS12_JDBC/SS12_user",
+    "last_opened_file_path": "D:/CodeGym/Module3_Sql_CSS_SERVLET_JSP_JDBC/SQL_CSS_SERVLET_JSP_JDBC/SS12_JDBC/users",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -136,7 +127,8 @@
       <updated>1675606774292</updated>
       <workItem from="1675606776674" duration="47000" />
       <workItem from="1675606839238" duration="334000" />
-      <workItem from="1675607273159" duration="3559000" />
+      <workItem from="1675607273159" duration="3884000" />
+      <workItem from="1675770655378" duration="31000" />
     </task>
     <servers />
   </component>
