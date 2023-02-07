@@ -153,28 +153,31 @@
 
     <%-- Content --%>
     <div class="d-flex flex-column flex-shrink-0 p3" style="width: 83%">
-        <center>
-            <h1>All List User</h1>
+        <h1 class="text-secondary">
+            User Management
+        </h1>
+        <hr>
 
-            <form action="/users">
-                <input name="find">
-                <input type="hidden" name="action" value="find">
-                <button>Search</button>
-            </form>
-
-            <button type="button" class="btn btn-success">
-                <a class="text-light" href="/users?action=create">Add New User</a>
-            </button>
-        </center>
+        <form action="/users">
+            <input type="hidden" name="action" value="find">
+            <input name="find">
+            <button >Search</button>
+        </form>
 
         <div align="center">
             <table cellpadding="5" class="table table-striped table-hover">
                 <thead>
                 <tr>
-                    <th></th>
+                    <th>
+                        <form action="">
+                            <button class="btn btn-success">
+                                <a class="text-light" href="/users?action=create">Add New User</a>
+                            </button>
+                        </form>
+                    </th>
                     <th>
                         <form action="/users">
-                            <button class="btn btn-outline-dark">Sort</button>
+                            <button class="btn btn-dark">Sort</button>
                             <input type="hidden" name="action" value="sort">
                         </form>
                     </th>
