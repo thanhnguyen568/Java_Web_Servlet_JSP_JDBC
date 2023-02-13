@@ -45,5 +45,29 @@ public class UserServiceImpl implements UserService {
         return repository.sortUserByName();
     }
 
+    @Override
+    public User getUserById(int id) {
+        return repository.getUserById(id);
+    }
+
+    @Override
+    public void insertUserStore(User user) throws SQLException {
+        repository.insertUserStore(user);
+    }
+
+    @Override
+    public List<User> getAllUsersStore() {
+        return repository.getAllUsersStore();
+    }
+
+    @Override
+    public boolean updateUserStore(User user) throws SQLException {
+        return repository.updateUserStore(user);
+    }
+
+    @Override
+    public boolean deleteUserStore(int id) throws SQLException {
+        return repository.deleteUserStore(id);
+    }
 }
 
