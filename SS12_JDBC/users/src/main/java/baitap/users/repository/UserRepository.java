@@ -20,9 +20,14 @@ public interface UserRepository {
 
     public List<User> sortUserByName();
 
-    public List<User> selectAllUsersByStored();
-    public boolean updateUserByStored(User user) throws SQLException;
-    public boolean deleteUserByStored(int id) throws SQLException;
+    User getUserById(int id);
 
+    void insertUserStore(User user) throws SQLException;
+
+    public List<User> getAllUsersStore();
+
+    public boolean updateUserStore(User user) throws SQLException;
+
+    public boolean deleteUserStore(int id) throws SQLException;
 
 }

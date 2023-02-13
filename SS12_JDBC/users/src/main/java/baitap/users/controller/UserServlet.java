@@ -37,10 +37,10 @@ public class UserServlet extends HttpServlet {
                     deleteUser(request, response);
                     break;
                 case "find":
-                    listUserByCountry(request,response);
+                    listUserByCountry(request, response);
                     break;
                 case "sort":
-                    sortUserByName(request,response);
+                    sortUserByName(request, response);
                 default:
                     listUser(request, response);
                     break;
@@ -86,7 +86,8 @@ public class UserServlet extends HttpServlet {
     }
 
     private void listUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> listUser = userService.selectAllUsers();
+//        List<User> listUser = userService.selectAllUsers();
+        List<User> listUser = userService.getAllUsersStore();
 
         request.setAttribute("listUser", listUser);
         request.getRequestDispatcher("user/list.jsp").forward(request, response);
@@ -102,7 +103,8 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
 
         User newUser = new User(name, email, country);
-        userService.insertUser(newUser);
+//        userService.insertUser(newUser);
+        userService.insertUserStore(newUser);
 
 //        request.getRequestDispatcher("user/create.jsp").forward(request, response);
         response.sendRedirect("/users");
@@ -110,7 +112,8 @@ public class UserServlet extends HttpServlet {
 
     private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        User user = userService.selectUser(id);
+//        User user = userService.selectUser(id);
+        User user = userService.getUserById(id);
 
         request.setAttribute("user", user);
         request.getRequestDispatcher("user/update.jsp").forward(request, response);
@@ -123,7 +126,8 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
 
         User user = new User(id, name, email, country);
-        userService.updateUser(user);
+//        userService.updateUser(user);
+        userService.updateUserStore(user);
 
 //        request.getRequestDispatcher("user/update.jsp").forward(request, response);
         response.sendRedirect("/users");
@@ -131,7 +135,8 @@ public class UserServlet extends HttpServlet {
 
     private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        userService.deleteUser(id);
+//        userService.deleteUser(id);
+        userService.deleteUserStore(id);
 
         response.sendRedirect("/users");
     }
