@@ -35,11 +35,13 @@ public class UserServiceImpl implements UserService {
         return repository.updateUser(user);
     }
 
+    @Override
     public List<User> selectUserByCountry(String country) {
         return repository.selectUserByCountry(country);
     }
 
-    public List<User> sortUserByName(){
+    @Override
+    public List<User> sortUserByName() {
         return repository.sortUserByName();
     }
 }

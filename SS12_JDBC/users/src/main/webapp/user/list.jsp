@@ -204,7 +204,9 @@
                             <button type="button" class="btn btn-warning">
                                 <a class="text-light" href="/users?action=update&id=${user.id}">Update</a>
                             </button>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+
+<%--                            onclick set hàm href--%>
+                            <button onclick="deleteAlert(${user.id})" type="button" class="btn btn-danger" data-bs-toggle="modal"
                                     data-bs-target="#staticBackdrop">
                                 Delete
                             </button>
@@ -233,13 +235,20 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">
-                    <a class="text-light" href="/users?action=delete&id=${user.id}">Delete</a>
+<%--                    Đổi id để gọi hàm--%>
+                    <a id="delLink" class="text-light" href="#">Delete</a>
                 </button>
             </div>
         </div>
     </div>
 </div>
 
+
+<script>
+    function deleteAlert(userId){
+        document.getElementById("delLink").href = '/users?action=delete&id='+ userId;
+    }
+</script>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/style/sidebars.js"></script>
 </body>

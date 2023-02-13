@@ -19,6 +19,7 @@ public class UserRepositoryImpl implements UserRepository {
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
     private static final String SELECT_USER_BY_COUNTRY = "select * from users where country like ?;";
     private static final String SORT_USER_BY_NAME = "select * from users order by `name` asc;";
+    private static final String GET_USER_BY_STORED = "call readUsers();";
 
     public UserRepositoryImpl() {
     }
@@ -185,5 +186,20 @@ public class UserRepositoryImpl implements UserRepository {
             printSQLException(e);
         }
         return users;
+    }
+
+    @Override
+    public List<User> selectAllUsersByStored() {
+        return null;
+    }
+
+    @Override
+    public boolean updateUserByStored(User user) throws SQLException {
+        return false;
+    }
+
+    @Override
+    public boolean deleteUserByStored(int id) throws SQLException {
+        return false;
     }
 }
