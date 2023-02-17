@@ -26,7 +26,7 @@ public class SavingAccServlet extends HttpServlet {
         try {
             switch (action) {
                 case "create":
-//                    showCreateForm(request, response);
+                    showCreateForm(request, response);
                     break;
                 case "update":
 //                    showUpdateForm(request, response);
@@ -46,6 +46,10 @@ public class SavingAccServlet extends HttpServlet {
         } catch (SQLException e) {
             throw new ServletException(e);
         }
+    }
+
+    private void showCreateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("account/create.jsp").forward(request, response);
     }
 
     private void listAcc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException{

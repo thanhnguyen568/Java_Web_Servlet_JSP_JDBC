@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdaf5179-f785-481a-97dd-faf3d9c46091" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../account/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../account/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../account/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../account/src/main/webapp/account/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../account/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../account/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../account/src/main/webapp/account/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../account/src/main/webapp/account/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,15 +20,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/CodeGym/Module3_Sql_CSS_SERVLET_JSP_JDBC/SQL_CSS_SERVLET_JSP_JDBC/SS12_JDBC",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/users" />
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -36,6 +36,7 @@
       <updated>1675606822563</updated>
       <workItem from="1675606823761" duration="14000" />
       <workItem from="1676557659416" duration="12000" />
+      <workItem from="1676640641211" duration="10000" />
     </task>
     <servers />
   </component>

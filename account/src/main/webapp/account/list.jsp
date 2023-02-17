@@ -9,23 +9,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-    <!-- Custom styles for this template -->
     <link href="/style/sidebars.css" rel="stylesheet">
 </head>
 <body>
@@ -34,7 +18,7 @@
     <%-- Menu --%>
     <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 15%;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <span class="fs-4">Bài tập SS12</span>
+            <span class="fs-4">BÀI THI</span>
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
@@ -56,12 +40,17 @@
 
     <%-- Content --%>
     <div class="d-flex flex-column flex-shrink-0 p3" style="width: 83%">
-        <h1 class="text-secondary">Saving Account</h1>
-        <hr>
-
         <div align="center">
             <table cellpadding="5" class="table table-striped table-hover">
                 <thead>
+                <tr>
+                    <th colspan="9">
+                        <form action="/saving-accounts">
+                            <input type="hidden" name="action" value="sort">
+                            <button class="btn btn-dark">Sort</button>
+                        </form>
+                    </th>
+                </tr>
                 <tr>
                     <th colspan="8">
                         <form action="/saving-accounts">
@@ -71,17 +60,10 @@
                         </form>
                     </th>
                     <th colspan="1">
-                        <form action="/saving-accounts?action=create">
+<%--                        <form action="/saving-accounts?action=create">--%>
+                        <form action="/saving-accounts">
                             <input type="hidden" name="action" value="create">
                             <button class="btn btn-success">Create New</button>
-                        </form>
-                    </th>
-                </tr>
-                <tr>
-                    <th colspan="9">
-                        <form action="/saving-accounts">
-                            <input type="hidden" name="action" value="sort">
-                            <button class="btn btn-dark">Sort</button>
                         </form>
                     </th>
                 </tr>
@@ -116,8 +98,7 @@
 
                                 <%--                            onclick set hàm href--%>
                             <button onclick="deleteAlert(${acc.accountId})" type="button" class="btn btn-danger"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop">
+                                    data-bs-toggle="modal" data-bs-target="#modalDelete">
                                 Delete
                             </button>
                         </td>
@@ -131,7 +112,7 @@
 </main>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+<div class="modal fade" id="modalDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
