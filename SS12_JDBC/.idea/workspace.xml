@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdaf5179-f785-481a-97dd-faf3d9c46091" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/SS12_user/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/src/main/java/baitap/ss12_user/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/src/main/java/baitap/ss12_user/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SS12_user/src/main/webapp/user/create.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../account/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../account/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +22,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/CodeGym/Module3_Sql_CSS_SERVLET_JSP_JDBC/SQL_CSS_SERVLET_JSP_JDBC/SS12_JDBC/SS12_user",
+    "last_opened_file_path": "D:/CodeGym/Module3_Sql_CSS_SERVLET_JSP_JDBC/SQL_CSS_SERVLET_JSP_JDBC/SS12_JDBC",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -50,6 +35,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675606822563</updated>
       <workItem from="1675606823761" duration="14000" />
+      <workItem from="1676557659416" duration="12000" />
     </task>
     <servers />
   </component>
