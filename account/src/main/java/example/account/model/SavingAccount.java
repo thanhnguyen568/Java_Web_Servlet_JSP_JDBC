@@ -8,9 +8,9 @@ public class SavingAccount {
     private int accountId;
     private String accountCode;
     private String accountName;
-    private Date accountCreateDate;
+    private String accountCreateDate;
     private int savingAmount;
-    private Date savingDepositDate;
+    private String savingDepositDate;
     private int savingInterestRate;
     private int termId;
     private static DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
@@ -18,7 +18,17 @@ public class SavingAccount {
     public SavingAccount() {
     }
 
-    public SavingAccount(int accountId, String accountCode, String accountName, Date accountCreateDate, int savingAmount, Date savingDepositDate, int savingInterestRate, int termId) {
+    public SavingAccount(String accountCode, String accountName, String accountCreateDate, int savingAmount, String savingDepositDate, int savingInterestRate, int termId) {
+        this.accountCode = accountCode;
+        this.accountName = accountName;
+        this.accountCreateDate = accountCreateDate;
+        this.savingAmount = savingAmount;
+        this.savingDepositDate = savingDepositDate;
+        this.savingInterestRate = savingInterestRate;
+        this.termId = termId;
+    }
+
+    public SavingAccount(int accountId, String accountCode, String accountName, String accountCreateDate, int savingAmount, String savingDepositDate, int savingInterestRate, int termId) {
         this.accountId = accountId;
         this.accountCode = accountCode;
         this.accountName = accountName;
@@ -28,6 +38,7 @@ public class SavingAccount {
         this.savingInterestRate = savingInterestRate;
         this.termId = termId;
     }
+
 
     public int getAccountId() {
         return accountId;
@@ -53,11 +64,11 @@ public class SavingAccount {
         this.accountName = accountName;
     }
 
-    public Date getAccountCreateDate() {
+    public String getAccountCreateDate() {
         return accountCreateDate;
     }
 
-    public void setAccountCreateDate(Date accountCreateDate) {
+    public void setAccountCreateDate(String accountCreateDate) {
         this.accountCreateDate = accountCreateDate;
     }
 
@@ -69,11 +80,11 @@ public class SavingAccount {
         this.savingAmount = savingAmount;
     }
 
-    public Date getSavingDepositDate() {
+    public String getSavingDepositDate() {
         return savingDepositDate;
     }
 
-    public void setSavingDepositDate(Date savingDepositDate) {
+    public void setSavingDepositDate(String savingDepositDate) {
         this.savingDepositDate = savingDepositDate;
     }
 

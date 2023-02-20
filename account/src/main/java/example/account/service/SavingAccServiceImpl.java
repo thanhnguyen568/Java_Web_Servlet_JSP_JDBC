@@ -12,27 +12,27 @@ public class SavingAccServiceImpl implements SavingAccService {
     private SavingAccRepository repository = new SavingAccRepositoryImpl();
 
     @Override
-    public void insertSavingAcc(SavingAccount savingAccount) throws SQLException {
-        repository.insertSavingAcc(savingAccount);
-    }
-
-    @Override
     public List<SavingAccount> selectAllAcc() {
-        return repository.selectAllAcc();
+        return repository.selectAll();
     }
 
     @Override
-    public boolean updateSavingAcc(SavingAccount savingAccount) throws SQLException {
-        return repository.updateSavingAcc(savingAccount);
+    public void insert(SavingAccount savingAccount) throws SQLException {
+        repository.insert(savingAccount);
     }
 
     @Override
-    public boolean deleteSavingAcc(int accountId) throws SQLException {
-        return repository.deleteSavingAcc(accountId);
+    public boolean update(SavingAccount savingAccount) throws SQLException {
+        return repository.update(savingAccount);
     }
 
     @Override
-    public SavingAccount selectSavingAccount(int accountId) {
-        return repository.selectSavingAccount(accountId);
+    public boolean delete(int accountId) throws SQLException {
+        return repository.delete(accountId);
+    }
+
+    @Override
+    public SavingAccount select(int accountId) {
+        return repository.select(accountId);
     }
 }

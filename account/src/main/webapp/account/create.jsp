@@ -6,25 +6,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="/style/sidebars.css" rel="stylesheet">
+    <style>
+        .row {
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: flex;
+            -ms-flex-align: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
-
 <main>
     <%-- Menu --%>
     <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 15%;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <span class="fs-4">BÀI THI</span>
+            <span class="fs-4">Menu !</span>
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="/saving-accounts" class="nav-link active" aria-current="page">
-                    Saving Account
+                <a href="/accounts" class="nav-link active" aria-current="page">
+                    Account
                 </a>
             </li>
             <li>
@@ -40,42 +52,43 @@
 
     <%-- Content --%>
     <div class="d-flex flex-column flex-shrink-0 p3" style="width: 83%">
+        <form method="post">
+            <div class="form-group row text-center d-flex flex-column">
+                <h1 class="text-secondary nav-link">Create New</h1>
 
+                <label class="col-sm-3 col-form-label text-start">Code:</label>
+                <div class="col-sm-3"><input type="text" class="form-control" name="code"></div>
 
+                <label class="col-sm-3 col-form-label text-start">Name:</label>
+                <div class="col-sm-3"><input type="text" class="form-control" name="name"></div>
 
+                <label class="col-sm-3 col-form-label text-start">CreateDate:</label>
+                <div class="col-sm-3"><input type="date" class="form-control" name="createDate"></div>
 
-        <%-- End Content --%>
-</main>
+                <label class="col-sm-3 col-form-label text-start">SavingAmount:</label>
+                <div class="col-sm-3"><input type="text" class="form-control" name="savingAmount"></div>
 
-<!-- Modal -->
-<div class="modal fade" id="modalDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Alert!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <label class="col-sm-3 col-form-label text-start">DepositDate:</label>
+                <div class="col-sm-3"><input type="date" class="form-control" name="depositDate"></div>
+
+                <label class="col-sm-3 col-form-label text-start">InterestRate(%):</label>
+                <div class="col-sm-3"><input type="text" class="form-control" name="interestRate"></div>
+
+                <label class="col-sm-3 col-form-label text-start">TermId:</label>
+                <div class="col-sm-3"><input type="text" class="form-control" name="termId"></div>
             </div>
-            <div class="modal-body">
-                Do you want to delete it ?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">
-                    <%--                    Đổi id để gọi hàm--%>
-                    <a id="delLink" class="text-light" href="#">Delete</a>
+
+            <div class="form-group row text-center d-flex flex-row">
+                <button class="btn btn-dark col-1">
+                    <a class="text-light" href="/accounts">Cancel</a>
                 </button>
+                &nbsp;
+                <button class="btn btn-success col-1">Save</button>
             </div>
-        </div>
+        </form>
     </div>
-</div>
-
-
-<script>
-    function deleteAlert(id) {
-        document.getElementById("delLink").href = '/saving-accounts?action=delete&id=' + id;
-    }
-</script>
+    <%-- End Content --%>
+</main>
 <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/style/sidebars.js"></script>
 </body>

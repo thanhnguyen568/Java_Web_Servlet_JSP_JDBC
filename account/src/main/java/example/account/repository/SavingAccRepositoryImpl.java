@@ -51,15 +51,40 @@ public class SavingAccRepositoryImpl implements SavingAccRepository {
     }
 
     @Override
-    public void insertSavingAcc(SavingAccount savingAccount) throws SQLException {
-        System.out.println(INSERT_SAVING_ACC_SQL);
+    public List<SavingAccount> selectAll() {
+        List<SavingAccount> accounts = new ArrayList<>();
+
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_SAVING_ACC);) {
+            System.out.println(preparedStatement);
+
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int accountId = rs.getInt("account_id");
+                String accountCode = rs.getString("account_code");
+                String accountName = rs.getString("account_name");
+                String accountCreateDate = rs.getString("account_create_date");
+                int savingAmount = rs.getInt("saving_amount");
+                String savingDepositDate = rs.getString("saving_deposit_date");
+                int savingInterestRate = rs.getInt("saving_interest_rate");
+                int termId = rs.getInt("term_id");
+                accounts.add(new SavingAccount(accountId, accountCode, accountName, accountCreateDate, savingAmount, savingDepositDate, savingInterestRate, termId));
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return accounts;
+    }
+
+    @Override
+    public void insert(SavingAccount savingAccount) throws SQLException {
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_SAVING_ACC_SQL);) {
             preparedStatement.setString(1, savingAccount.getAccountCode());
             preparedStatement.setString(2, savingAccount.getAccountName());
-            preparedStatement.setDate(3, (Date) savingAccount.getAccountCreateDate());
+            preparedStatement.setString(3, savingAccount.getAccountCreateDate());
             preparedStatement.setInt(4, savingAccount.getSavingAmount());
-            preparedStatement.setDate(5, (Date) savingAccount.getSavingDepositDate());
+            preparedStatement.setString(5, savingAccount.getSavingDepositDate());
             preparedStatement.setInt(6, savingAccount.getSavingInterestRate());
             preparedStatement.setInt(7, savingAccount.getTermId());
             System.out.println(preparedStatement);
@@ -71,43 +96,17 @@ public class SavingAccRepositoryImpl implements SavingAccRepository {
     }
 
     @Override
-    public List<SavingAccount> selectAllAcc() {
-        List<SavingAccount> accounts = new ArrayList<>();
-        try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_SAVING_ACC);) {
-            System.out.println(preparedStatement);
-
-            ResultSet rs = preparedStatement.executeQuery();
-
-            while (rs.next()) {
-                int accountId = rs.getInt("account_id");;
-                String accountCode = rs.getString("account_code");
-                String accountName = rs.getString("account_name");
-                Date accountCreateDate = rs.getDate("account_create_date");
-                int savingAmount = rs.getInt("saving_amount");
-                Date savingDepositDate = rs.getDate("saving_deposit_date");
-                int savingInterestRate = rs.getInt("saving_interest_rate");
-                int termId = rs.getInt("term_id");;
-                accounts.add(new SavingAccount(accountId, accountCode,accountName,accountCreateDate,savingAmount,savingDepositDate,savingInterestRate,termId));
-            }
-        } catch (SQLException e) {
-            printSQLException(e);
-        }
-        return accounts;
-    }
-
-    @Override
-    public boolean updateSavingAcc(SavingAccount savingAccount) throws SQLException {
+    public boolean update(SavingAccount savingAccount) throws SQLException {
         return false;
     }
 
     @Override
-    public boolean deleteSavingAcc(int accountId) throws SQLException {
+    public boolean delete(int accountId) throws SQLException {
         return false;
     }
 
     @Override
-    public SavingAccount selectSavingAccount(int accountId) {
+    public SavingAccount select(int accountId) {
         return null;
     }
 }

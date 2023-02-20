@@ -6,13 +6,14 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface SavingAccRepository {
-    void insertSavingAcc(SavingAccount savingAccount) throws SQLException;
 
-    List<SavingAccount> selectAllAcc();
+    List<SavingAccount> selectAll();
 
-    boolean updateSavingAcc(SavingAccount savingAccount) throws SQLException;
+    void insert(SavingAccount savingAccount) throws SQLException;
 
-    boolean deleteSavingAcc(int accountId) throws SQLException;
+    boolean update(SavingAccount savingAccount) throws SQLException;
 
-    SavingAccount selectSavingAccount(int accountId);
+    boolean delete(int accountId) throws SQLException;
+
+    SavingAccount select(int accountId);
 }

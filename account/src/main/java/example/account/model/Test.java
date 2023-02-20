@@ -8,7 +8,7 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) {
         SavingAccRepository repository =new SavingAccRepositoryImpl();
-        List<SavingAccount> list = repository.selectAllAcc();
+        List<SavingAccount> list = repository.selectAll();
         for ( SavingAccount o: list){
             System.out.println(o);
         }
