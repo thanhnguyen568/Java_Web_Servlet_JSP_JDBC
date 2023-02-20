@@ -31,7 +31,7 @@ public class SavingAccServlet extends HttpServlet {
                     showCreateForm(request, response);
                     break;
                 case "update":
-                    showUpdateForm(request, response);
+//                    showUpdateForm(request, response);
                     break;
                 case "delete":
 //                    deleteAccount(request, response);
