@@ -31,7 +31,7 @@ public class SavingAccServlet extends HttpServlet {
                     showCreateForm(request, response);
                     break;
                 case "update":
-//                    showUpdateForm(request, response);
+                    showUpdateForm(request, response);
                     break;
                 case "delete":
 //                    deleteAccount(request, response);
@@ -99,11 +99,11 @@ public class SavingAccServlet extends HttpServlet {
     private void createAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         String code = request.getParameter("code");
         String name = request.getParameter("name");
-        String createDate = request.getParameter("createDate");
-        int savingAmount = Integer.parseInt(request.getParameter("savingAmount"));
-        String depositDate = request.getParameter("depositDate");
-        int interestRate = Integer.parseInt(request.getParameter("interestRate"));
-        int termId = Integer.parseInt(request.getParameter("termId"));
+        String createDate = request.getParameter("CreateDate");
+        int savingAmount = Integer.parseInt(request.getParameter("SavingAmount"));
+        String depositDate = request.getParameter("DepositDate");
+        int interestRate = Integer.parseInt(request.getParameter("InterestRate"));
+        int termId = Integer.parseInt(request.getParameter("TermId"));
         SavingAccount account = new SavingAccount(code, name, createDate, savingAmount, depositDate, interestRate, termId);
         savingAccService.insert(account);
 

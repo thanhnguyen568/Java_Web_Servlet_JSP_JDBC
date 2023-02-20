@@ -2,94 +2,89 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>User Management Application</title>
+    <title>Title</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-    <!-- Bootstrap core CSS -->
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/style/sidebars.css" rel="stylesheet">
-    <style>
-        .row {
-            display: -ms-flexbox;
-            display: -webkit-box;
-            display: flex;
-            -ms-flex-align: center;
-            -ms-flex-pack: center;
-            -webkit-box-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            justify-content: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/datatables/css/dataTables.bootstrap4.css">
 </head>
 <body>
-<main>
-    <%-- Menu --%>
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 15%;">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <span class="fs-4">Menu !</span>
-        </a>
-        <hr>
-        <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-                <a href="/accounts" class="nav-link active" aria-current="page">
-                    Account
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link text-white">
-                    Term
-                </a>
-            </li>
-        </ul>
-        <hr>
-    </div>
-    <div class="b-example-divider"></div>
-    <%-- End Menu --%>
+<%--Menu--%>
+<ul class="nav nav-tabs nav-stacked">
+    <li class="nav-item">
+        <a href="/accounts" class="nav-link active">Account</a>
+    </li>
+    <li class="nav-item">
+        <a href="/accounts" class="nav-link">Term</a>
+    </li>
+</ul>
+<%--Header--%>
+<h3>Management</h3>
+<hr>
 
-    <%-- Content --%>
-    <div class="d-flex flex-column flex-shrink-0 p3" style="width: 83%">
-        <form method="post">
-            <div class="form-group row text-center d-flex flex-column">
-                <h1 class="text-secondary nav-link">Create New</h1>
+<%--Form--%>
+<div class="row justify-content-center mt-4">
+    <form class="col-md-4" method="post" >
+        <div class="form-group row text-center d-flex flex-column">
+            <input type="hidden" name= "action" value="create">
+            <h1 class="text-danger">Create new</h1>
 
-                <label class="col-sm-3 col-form-label text-start">Code:</label>
-                <div class="col-sm-3"><input type="text" class="form-control" name="code"></div>
-
-                <label class="col-sm-3 col-form-label text-start">Name:</label>
-                <div class="col-sm-3"><input type="text" class="form-control" name="name"></div>
-
-                <label class="col-sm-3 col-form-label text-start">CreateDate:</label>
-                <div class="col-sm-3"><input type="date" class="form-control" name="createDate"></div>
-
-                <label class="col-sm-3 col-form-label text-start">SavingAmount:</label>
-                <div class="col-sm-3"><input type="text" class="form-control" name="savingAmount"></div>
-
-                <label class="col-sm-3 col-form-label text-start">DepositDate:</label>
-                <div class="col-sm-3"><input type="date" class="form-control" name="depositDate"></div>
-
-                <label class="col-sm-3 col-form-label text-start">InterestRate(%):</label>
-                <div class="col-sm-3"><input type="text" class="form-control" name="interestRate"></div>
-
-                <label class="col-sm-3 col-form-label text-start">TermId:</label>
-                <div class="col-sm-3"><input type="text" class="form-control" name="termId"></div>
+            <div class="form-group">
+                <label for="Code">Code</label>
+                <input type="text" class="form-control" name="code" id="Code">
             </div>
-
-            <div class="form-group row text-center d-flex flex-row">
-                <button class="btn btn-dark col-1">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" name="name" id="Name">
+            </div>
+            <div class="form-group">
+                <label for="CreateDate">CreateDate</label>
+                <input type="text" class="form-control" name="CreateDate" id="CreateDate">
+            </div>
+            <div class="form-group">
+                <label for="SavingAmount">SavingAmount</label>
+                <input type="text" class="form-control" name="SavingAmount" id="SavingAmount">
+            </div>
+            <div class="form-group">
+                <label for="DepositDate">DepositDate</label>
+                <input type="text" class="form-control" name="DepositDate" id="DepositDate">
+            </div>
+            <div class="form-group">
+                <label for="InterestRate">InterestRate</label>
+                <input type="text" class="form-control" name="InterestRate" id="InterestRate">
+            </div>
+            <div class="form-group">
+                <label for="TermId">TermId</label>
+                <input type="text" class="form-control" name="TermId" id="TermId">
+            </div>
+            <div class="form-group mt-2">
+                <button class="btn btn-warning" role="button">
                     <a class="text-light" href="/accounts">Cancel</a>
                 </button>
-                &nbsp;
-                <button class="btn btn-success col-1">Save</button>
+                <button class="btn btn-success" role="button" type="submit">Save</button>
             </div>
-        </form>
-    </div>
-    <%-- End Content --%>
-</main>
-<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/style/sidebars.js"></script>
+        </div>
+    </form>
+</div>
+
+<script src="/static/js/jquery-3.5.1.min.js"></script>
+<script src="/static/js/bootstrap.js"></script>
+<script src="/static/datatables/js/jquery.dataTables.js"></script>
+<script src="/static/datatables/js/dataTables.bootstrap4.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tableAccount').dataTable({
+            'searching': false,
+            'pageLength': 2
+        })
+    })
+
+    function deleteAlert(id) {
+        document.getElementById("delLink").href = '/accounts?action=delete&id=' + id;
+    }
+</script>
 </body>
 </html>
