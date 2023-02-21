@@ -15,5 +15,6 @@ public interface SavingAccService {
     boolean delete(int accountId) throws SQLException;
 
     SavingAccount select(int accountId);
+    List<SavingAccount> search(String strSearch);
 
 }

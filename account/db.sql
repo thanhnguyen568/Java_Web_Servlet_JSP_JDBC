@@ -40,7 +40,12 @@ FROM
     saving_account
         LEFT JOIN
     term USING (term_id);
+    
 SELECT 
     *
 FROM
-    saving_account
+    saving_account;
+    
+    
+SELECT * FROM saving_account
+ WHERE account_code LIKE '%01%' OR account_name LIKE '%Giang%';

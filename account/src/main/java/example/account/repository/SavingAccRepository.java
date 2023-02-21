@@ -9,11 +9,14 @@ public interface SavingAccRepository {
 
     List<SavingAccount> selectAll();
 
-    void insert(SavingAccount savingAccount) throws SQLException;
-
-    boolean update(SavingAccount savingAccount) throws SQLException;
-
-    boolean delete(int accountId) throws SQLException;
+    void insert(SavingAccount savingAccount);
 
     SavingAccount select(int accountId);
+
+    boolean update(SavingAccount savingAccount);
+
+    boolean delete(int accountId);
+
+    List<SavingAccount> search(String str);
+
 }

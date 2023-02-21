@@ -22,6 +22,11 @@ public class SavingAccServiceImpl implements SavingAccService {
     }
 
     @Override
+    public SavingAccount select(int accountId) {
+        return repository.select(accountId);
+    }
+
+    @Override
     public boolean update(SavingAccount savingAccount) throws SQLException {
         return repository.update(savingAccount);
     }
@@ -31,8 +36,10 @@ public class SavingAccServiceImpl implements SavingAccService {
         return repository.delete(accountId);
     }
 
+
     @Override
-    public SavingAccount select(int accountId) {
-        return repository.select(accountId);
+    public List<SavingAccount> search(String strSearch) {
+        return repository.search(strSearch);
     }
+
 }

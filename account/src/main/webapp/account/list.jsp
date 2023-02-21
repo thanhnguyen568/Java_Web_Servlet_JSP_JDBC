@@ -12,76 +12,92 @@
     <link rel="stylesheet" href="/static/datatables/css/dataTables.bootstrap4.css">
 </head>
 <body>
-<%--Menu--%>
-<ul class="nav nav-tabs nav-stacked">
-    <li class="nav-item">
-        <a href="/accounts" class="nav-link active">Account</a>
-    </li>
-    <li class="nav-item">
-        <a href="/accounts" class="nav-link">Term</a>
-    </li>
-</ul>
+<div class="container-fluid">
+    <%--Menu--%>
+    <ul class="nav nav-tabs nav-stacked">
+        <li class="nav-item">
+            <a href="/accounts" class="nav-link active">Account</a>
+        </li>
+        <li class="nav-item">
+            <a href="/accounts" class="nav-link">Term</a>
+        </li>
+    </ul>
 
-<%--Header--%>
-<h3>Management</h3>
+    <h2 class="text-secondary">Management</h2>
+    <div class="d-flex flex-row">
+        <form action="/accounts" class="col-4">
+            <input type="hidden" name="action" value="create">
+            <button class="btn btn-success">Create</button>
+        </form>
+        <form action="" class="col-4">
+            <button onclick="deleteAlert(${acc.accountId})" type="button" class="btn btn-danger"
+                    data-toggle="modal" data-target="#modelId">
+                Multiple delete
+            </button>
+        </form>
+        <form action="/accounts" class="col-4">
+            <div class="input-group">
+                <input class="form-control" style="height: 40px; width: 500px" name="search">
+                <input type="hidden" name="action" value="search">
+                <button class="btn btn-info">Search</button>
+            </div>
+        </form>
+    </div>
 
-<hr>
-<div class="d-flex flex-row">
-    <form action="/accounts" class="col-6">
-        <input type="hidden" name="action" value="create">
-        <button class="btn btn-success">Create</button>
-    </form>
-    <form action="/accounts" class="col-6">
-        <div class="input-group">
-            <input class="form-control" style="height: 40px; width: 500px" name="search">
-            <input type="hidden" name="action" value="search">
-            <button class="btn btn-info">Search</button>
-        </div>
-    </form>
-</div>
-<hr>
-
-<%--Table--%>
-<table class="table table-striped" id="tableAccount">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Code</th>
-        <th>Name</th>
-        <th>Create Date</th>
-        <th>Saving Amount</th>
-        <th>Deposit Date</th>
-        <th>Interest Rate(%)</th>
-        <th>Term Name</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="acc" items="${savingAccounts}">
+    <%--Table--%>
+    <table class="table table-striped" id="tableAccount">
+        <thead>
         <tr>
-            <td><c:out value="${acc.accountId}"/></td>
-            <td><c:out value="${acc.accountCode}"/></td>
-            <td><c:out value="${acc.accountName}"/></td>
-            <td><c:out value="${acc.accountCreateDate}"/></td>
-            <td><c:out value="${acc.savingAmount}"/></td>
-            <td><c:out value="${acc.savingDepositDate}"/></td>
-            <td><c:out value="${acc.savingInterestRate}"/></td>
-            <td><c:out value="${acc.termId}"/></td>
-            <td>
-                <button type="button" class="btn btn-warning">
-                    <a class="text-light"
-                       href="/accounts?action=update&id=${acc.accountId}">Update</a>
-                </button>
-                    <%-- onclick set hàm href--%>
-                <button onclick="deleteAlert(${acc.accountId})" type="button" class="btn btn-danger"
-                        data-toggle="modal" data-target="#modelId">
-                    Delete
-                </button>
-            </td>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Create Date</th>
+            <th>Saving Amount</th>
+            <th>Deposit Date</th>
+            <th>Interest Rate(%)</th>
+            <th>Term Name</th>
+            <th>Action</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach var="acc" items="${listAccount}">
+            <tr>
+                <td>
+                    <input type="checkbox" name="checkbox" value="${acc.accountId}">
+                        ${acc.accountId}
+                </td>
+                <td>${acc.accountCode}</td>
+                <td>${acc.accountName}</td>
+                <td>${acc.accountCreateDate}</td>
+                <td>${acc.savingAmount}</td>
+                <td>${acc.savingDepositDate}</td>
+                <td>${acc.savingInterestRate}</td>
+                <td>
+                        <%--                    <c:out value="${acc.termId}"/>--%>
+                    <c:choose>
+                        <c:when test="${acc.termId == 1}">Day</c:when>
+                        <c:when test="${acc.termId == 2}">Month</c:when>
+                        <c:otherwise>none</c:otherwise>
+                    </c:choose>
+                </td>
+
+                <td>
+                    <button type="button" class="btn btn-warning">
+                        <a class="text-light"
+                           href="/accounts?action=update&accountId=${acc.accountId}">Update</a>
+                    </button>
+                        <%-- onclick set hàm href--%>
+                    <button onclick="deleteAlert(${acc.accountId})" type="button" class="btn btn-danger"
+                            data-toggle="modal" data-target="#modelId">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -115,12 +131,12 @@
     $(document).ready(function () {
         $('#tableAccount').dataTable({
             'searching': false,
-            'pageLength': 2
+            'pageLength': 10
         })
     })
 
     function deleteAlert(id) {
-        document.getElementById("delLink").href = '/accounts?action=delete&id=' + id;
+        document.getElementById("delLink").href = '/accounts?action=delete&accountId=' + id;
     }
 </script>
 </body>

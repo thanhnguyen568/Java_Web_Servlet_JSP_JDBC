@@ -1,22 +1,26 @@
 package example.account.controller;
 
 import example.account.model.SavingAccount;
+import example.account.model.Term;
 import example.account.service.SavingAccServiceImpl;
+import example.account.service.TermServiceImpl;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.List;
 
 @WebServlet(name = "SavingAccServlet", urlPatterns = "/accounts")
 public class SavingAccServlet extends HttpServlet {
-    private SavingAccServiceImpl savingAccService;
+    private SavingAccServiceImpl accService;
+    private TermServiceImpl termService;
 
     public void init() {
-        savingAccService = new SavingAccServiceImpl();
+        accService = new SavingAccServiceImpl();
+        termService = new TermServiceImpl();
     }
 
     @Override
@@ -34,15 +38,13 @@ public class SavingAccServlet extends HttpServlet {
                     showUpdateForm(request, response);
                     break;
                 case "delete":
-//                    deleteAccount(request, response);
+                    deleteAccount(request, response);
                     break;
                 case "search":
-//                    listAccById(request, response);
+                    searchAccount(request, response);
                     break;
-                case "sort":
-//                    sortAccByName(request, response);
                 default:
-                    listAll(request, response);
+                    listAccount(request, response);
                     break;
             }
         } catch (SQLException e) {
@@ -50,23 +52,46 @@ public class SavingAccServlet extends HttpServlet {
         }
     }
 
-    private void listAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        List<SavingAccount> list = savingAccService.selectAllAcc();
+    private void listAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        List<SavingAccount> list = accService.selectAllAcc();
 
-        request.setAttribute("savingAccounts", list);
+        request.setAttribute("listAccount", list);
+
         request.getRequestDispatcher("account/list.jsp").forward(request, response);
         request.setAttribute("message", "New customer was created");
     }
 
-    private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        SavingAccount account = savingAccService.select(id);
+    private void searchAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String strSearch = request.getParameter("search");
 
-        request.setAttribute("acc",account);
+        List<SavingAccount> list = accService.search(strSearch);
+
+        request.setAttribute("listAccount", list);
+        request.getRequestDispatcher("account/list.jsp").forward(request, response);
+    }
+
+    private void deleteAccount(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+        int id = Integer.parseInt(request.getParameter("accountId"));
+
+        accService.delete(id);
+
+        response.sendRedirect("/accounts");
+    }
+
+    private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("accountId"));
+
+        SavingAccount account = accService.select(id);
+
+        request.setAttribute("updateAccount", account);
         request.getRequestDispatcher("account/update.jsp").forward(request, response);
     }
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //drop list
+        List<Term> listTerm = termService.listTerm();
+        request.setAttribute("listTerm",listTerm);
+
         request.getRequestDispatcher("account/create.jsp").forward(request, response);
     }
 
@@ -94,18 +119,33 @@ public class SavingAccServlet extends HttpServlet {
     }
 
     private void updateAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        int id = Integer.parseInt(request.getParameter("accountId"));
+        String code = request.getParameter("accountCode");
+        String name = request.getParameter("accountName");
+        Date createDate = Date.valueOf(request.getParameter("accountCreateDate"));
+        int savingAmount = Integer.parseInt(request.getParameter("savingAmount"));
+        Date depositDate = Date.valueOf(request.getParameter("savingDepositDate"));
+        int interestRate = Integer.parseInt(request.getParameter("savingInterestRate"));
+        int termId = Integer.parseInt(request.getParameter("termId"));
+        SavingAccount account = new SavingAccount(id, code, name, createDate, savingAmount, depositDate, interestRate, termId);
+
+        accService.update(account);
+
+        response.sendRedirect("accounts");
+
     }
 
     private void createAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        String code = request.getParameter("code");
-        String name = request.getParameter("name");
-        String createDate = request.getParameter("CreateDate");
-        int savingAmount = Integer.parseInt(request.getParameter("SavingAmount"));
-        String depositDate = request.getParameter("DepositDate");
-        int interestRate = Integer.parseInt(request.getParameter("InterestRate"));
-        int termId = Integer.parseInt(request.getParameter("TermId"));
+        String code = request.getParameter("accountCode");
+        String name = request.getParameter("accountName");
+        Date createDate = Date.valueOf(request.getParameter("accountCreateDate"));
+        int savingAmount = Integer.parseInt(request.getParameter("savingAmount"));
+        Date depositDate = Date.valueOf(request.getParameter("savingDepositDate"));
+        int interestRate = Integer.parseInt(request.getParameter("savingInterestRate"));
+        int termId = Integer.parseInt(request.getParameter("termId"));
         SavingAccount account = new SavingAccount(code, name, createDate, savingAmount, depositDate, interestRate, termId);
-        savingAccService.insert(account);
+
+        accService.insert(account);
 
         response.sendRedirect("accounts");
     }
