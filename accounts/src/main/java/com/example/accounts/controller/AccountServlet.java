@@ -1,10 +1,8 @@
-package example.account.controller;
+package com.example.accounts.controller;
 
-import example.account.model.SavingAccount;
-import example.account.model.Term;
-import example.account.service.SavingAccServiceImpl;
-import example.account.service.TermServiceImpl;
-import example.account.util.RegexPattern;
+import com.example.accounts.model.Account;
+import com.example.accounts.service.AccountServiceImpl;
+import com.example.accounts.service.TermService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -14,14 +12,14 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "SavingAccServlet", urlPatterns = "/accounts")
-public class SavingAccServlet extends HttpServlet implements RegexPattern {
-    private SavingAccServiceImpl accService;
-    private TermServiceImpl termService;
+@WebServlet(name = "AccountServlet", urlPatterns = "/accounts")
+public class AccountServlet extends HttpServlet {
+    private AccountServiceImpl accountService;
+    private TermService termService;
 
     public void init() {
-        accService = new SavingAccServiceImpl();
-        termService = new TermServiceImpl();
+        accountService = new AccountServiceImpl();
+        termService = new TermService();
     }
 
     @Override
@@ -44,6 +42,8 @@ public class SavingAccServlet extends HttpServlet implements RegexPattern {
                 case "search":
                     searchAccount(request, response);
                     break;
+                case "multiDel":
+                    multiDelete(request, response);
                 default:
                     listAccount(request, response);
                     break;
@@ -53,18 +53,18 @@ public class SavingAccServlet extends HttpServlet implements RegexPattern {
         }
     }
 
-    private void listAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        List<SavingAccount> list = accService.selectAllAcc();
-
-        request.setAttribute("listAccount", list);
-
-        request.getRequestDispatcher("account/list.jsp").forward(request, response);
+    private void multiDelete(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+        String[] list = request.getParameterValues("checkbox");
+        for (String item : list) {
+            int id = Integer.parseInt(item);
+            accountService.delete(id);
+        }
     }
 
     private void searchAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String strSearch = request.getParameter("search");
 
-        List<SavingAccount> list = accService.search(strSearch);
+        List<Account> list = accountService.search(strSearch);
 
         request.setAttribute("listAccount", list);
         request.getRequestDispatcher("account/list.jsp").forward(request, response);
@@ -73,28 +73,33 @@ public class SavingAccServlet extends HttpServlet implements RegexPattern {
     private void deleteAccount(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("accountId"));
 
-        accService.delete(id);
+        accountService.delete(id);
 
-        response.sendRedirect("/accounts");
+        response.sendRedirect("accounts");
     }
 
     private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("accountId"));
 
-        SavingAccount account = accService.select(id);
+        Account account = accountService.select(id);
 
         request.setAttribute("updateAccount", account);
         request.getRequestDispatcher("account/update.jsp").forward(request, response);
     }
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //drop list
+//        drop list
         List<Term> listTerm = termService.listTerm();
         request.setAttribute("listTerm", listTerm);
 
         request.getRequestDispatcher("account/create.jsp").forward(request, response);
     }
 
+    private void listAccount(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        List<Account> list = accountService.selectAll();
+        request.setAttribute("listAccount", list);
+        request.getRequestDispatcher("account/list.jsp").forward(request, response);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -118,60 +123,41 @@ public class SavingAccServlet extends HttpServlet implements RegexPattern {
         }
     }
 
-//    private void updateAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-//        int id = Integer.parseInt(request.getParameter("accountId"));
-//        String code = request.getParameter("accountCode");
-//        String name = request.getParameter("accountName");
-//        Date createDate = Date.valueOf(request.getParameter("accountCreateDate"));
-//        int savingAmount = Integer.parseInt(request.getParameter("savingAmount"));
-//        Date depositDate = Date.valueOf(request.getParameter("savingDepositDate"));
-//        int interestRate = Integer.parseInt(request.getParameter("savingInterestRate"));
-//        int termId = Integer.parseInt(request.getParameter("termId"));
-//        SavingAccount account = new SavingAccount(id, code, name, createDate, savingAmount, depositDate, interestRate, termId);
-//
-//        accService.update(account);
-//
-//        response.sendRedirect("accounts");
-//
-//    }
-
-    private void updateAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+    private void updateAccount(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
         int accountId = Integer.parseInt(request.getParameter("accountId"));
-
         String accountCode = request.getParameter("accountCode");
-
         String accountName = request.getParameter("accountName");
-        while (!accService.validationName(accountName)){
+        while (!accountService.validationName(accountName)) {
             System.out.println(accountName);
             request.setAttribute("message", "Wrong pattern accountName !");
-            request.getRequestDispatcher("account/update.jsp").forward(request,response);
+            request.getParameter("accountName");
+            request.getRequestDispatcher("account/update.jsp").forward(request, response);
         }
-
-        Date createDate = Date.valueOf(request.getParameter("accountCreateDate"));
-        int savingAmount = Integer.parseInt(request.getParameter("savingAmount"));
-        Date depositDate = Date.valueOf(request.getParameter("savingDepositDate"));
-        int interestRate = Integer.parseInt(request.getParameter("savingInterestRate"));
+        Date createDate = Date.valueOf((request.getParameter("createDate")));
+        int savingAmount = Integer.parseInt(request.getParameter("amount"));
+        Date depositDate = Date.valueOf(request.getParameter("depositDate"));
+        int interestRate = Integer.parseInt(request.getParameter("interestRate"));
         int termId = Integer.parseInt(request.getParameter("termId"));
 
-        SavingAccount account = new SavingAccount(accountId, accountCode, accountName, createDate, savingAmount, depositDate, interestRate, termId);
+        Account account = new Account(accountId, accountCode, accountName, createDate, savingAmount, depositDate, interestRate, termId);
 
-        accService.update(account);
+        accountService.update(account);
 
         response.sendRedirect("accounts");
     }
 
-    private void createAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+    private void createAccount(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         String code = request.getParameter("accountCode");
         String name = request.getParameter("accountName");
-        Date createDate = Date.valueOf(request.getParameter("accountCreateDate"));
-        int savingAmount = Integer.parseInt(request.getParameter("savingAmount"));
-        Date depositDate = Date.valueOf(request.getParameter("savingDepositDate"));
-        int interestRate = Integer.parseInt(request.getParameter("savingInterestRate"));
+        Date createDate = Date.valueOf(request.getParameter("createDate"));
+        int amount = Integer.parseInt(request.getParameter("amount"));
+        Date depositDate = Date.valueOf(request.getParameter("depositDate"));
+        int interestRate = Integer.parseInt(request.getParameter("interestRate"));
         int termId = Integer.parseInt(request.getParameter("termId"));
-        SavingAccount account = new SavingAccount(code, name, createDate, savingAmount, depositDate, interestRate, termId);
+        Account account = new Account(code, name, createDate, amount, depositDate, interestRate, termId);
 
-        accService.insert(account);
-        request.setAttribute("message","Create new success");
+        accountService.insert(account);
+        request.setAttribute("message", "Create new success");
         response.sendRedirect("accounts");
     }
 }

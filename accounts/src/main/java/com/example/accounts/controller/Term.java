@@ -1,4 +1,4 @@
-package example.account.model;
+package com.example.accounts.controller;
 
 public class Term {
     private int termId;
@@ -36,4 +36,3 @@ public class Term {
                 '}';
     }
 }
-
