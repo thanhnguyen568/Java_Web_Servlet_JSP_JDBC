@@ -55,7 +55,7 @@
                     <input type="text" class="form-control" name="savingInterestRate" id="savingInterestRate">
                 </div>
                 <div class="form-group">
-                    <label for="termId">termId</label>
+                    <label for="termId">Term</label>
                     <select class="form-control" name="termId" id="termId">
                         <c:forEach items="${listTerm}" var="term">
                             <option value="${term.termId}">

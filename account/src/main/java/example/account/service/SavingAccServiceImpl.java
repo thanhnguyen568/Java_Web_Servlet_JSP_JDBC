@@ -3,12 +3,13 @@ package example.account.service;
 import example.account.model.SavingAccount;
 import example.account.repository.SavingAccRepository;
 import example.account.repository.SavingAccRepositoryImpl;
+import example.account.util.RegexPattern;
 
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class SavingAccServiceImpl implements SavingAccService {
+public class SavingAccServiceImpl implements SavingAccService, RegexPattern {
     private SavingAccRepository repository = new SavingAccRepositoryImpl();
 
     @Override
@@ -42,4 +43,19 @@ public class SavingAccServiceImpl implements SavingAccService {
         return repository.search(strSearch);
     }
 
+    public boolean validationCode(String input) {
+        return input.matches(REGEX_CODE_ACC);
+    }
+
+    public boolean validationName(String input) {
+        return input.matches(REGEX_NAME_ACC);
+    }
+
+    public boolean validationDate(String input) {
+        return input.matches(REGEX_DATE_ACC);
+    }
+
+    public boolean validationNum(String input) {
+        return input.matches(REGEX_NUMBER_ACC);
+    }
 }

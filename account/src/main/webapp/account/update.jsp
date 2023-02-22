@@ -23,41 +23,48 @@
         </li>
     </ul>
 
+    <div class="alert alert-danger" role="alert">
+        <c:out value="${message}"/>
+    </div>
+
     <%--Form--%>
     <div class="row justify-content-center mt-4">
         <form class="col-md-4" method="post">
             <div class="form-group row text-center d-flex flex-column">
                 <h1 class="text-danger">Update Information</h1>
 
-                <c:if test="${updateAccount != null}">
-                    <input type="hidden" name="account" value="${updateAccount.accountId}"/>
-                </c:if>
                 <div class="form-group">
                     <label for="accountCode" class="text-left">Code</label>
-                    <input type="text" class="form-control" name="accountCode" id="accountCode" value="${updateAccount.accountCode}">
+                    <input type="text" class="form-control" name="accountCode" id="accountCode"
+                           value="${updateAccount.accountCode}">
                 </div>
                 <div class="form-group">
                     <label for="accountName">Name</label>
-                    <input type="text" class="form-control" name="accountName" id="accountName" value="${updateAccount.accountName}">
+                    <input type="text" class="form-control" name="accountName" id="accountName"
+                           value="${updateAccount.accountName}">
                 </div>
                 <div class="form-group">
                     <label for="accountCreateDate">CreateDate</label>
-                    <input type="date" class="form-control" name="accountCreateDate" id="accountCreateDate" value="${updateAccount.accountCreateDate}">
+                    <input type="date" class="form-control" name="accountCreateDate" id="accountCreateDate"
+                           value="${updateAccount.accountCreateDate}">
                 </div>
                 <div class="form-group">
                     <label for="SavingAmount">SavingAmount</label>
-                    <input type="text" class="form-control" name="savingAmount" id="savingAmount" value="${updateAccount.savingAmount}">
+                    <input type="text" class="form-control" name="savingAmount" id="savingAmount"
+                           value="${updateAccount.savingAmount}">
                 </div>
                 <div class="form-group">
                     <label for="savingDepositDate">DepositDate</label>
-                    <input type="date" class="form-control" name="savingDepositDate" id="savingDepositDate" value="${updateAccount.savingDepositDate}">
+                    <input type="date" class="form-control" name="savingDepositDate" id="savingDepositDate"
+                           value="${updateAccount.savingDepositDate}">
                 </div>
                 <div class="form-group">
                     <label for="savingInterestRate">InterestRate</label>
-                    <input type="text" class="form-control" name="savingInterestRate" id="savingInterestRate" value="${updateAccount.savingInterestRate}">
+                    <input type="text" class="form-control" name="savingInterestRate" id="savingInterestRate"
+                           value="${updateAccount.savingInterestRate}">
                 </div>
                 <div class="form-group">
-                    <label for="termId">termId</label>
+                    <label for="termId">Term</label>
                     <input type="text" class="form-control" name="termId" id="termId" value="${updateAccount.termId}">
                 </div>
 
