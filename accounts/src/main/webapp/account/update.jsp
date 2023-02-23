@@ -49,7 +49,7 @@
                  value="${updateAccount.createDate}">
         </div>
         <div class="form-group">
-          <label for="amount">SavingAmount</label>
+          <label for="amount">Amount</label>
           <input type="text" class="form-control" name="amount" id="amount"
                  value="${updateAccount.amount}">
         </div>

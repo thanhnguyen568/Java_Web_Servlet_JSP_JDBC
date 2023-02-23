@@ -1,4 +1,4 @@
-package example.account;
+package exam.exam;
 
 import java.io.*;
 import javax.servlet.http.*;

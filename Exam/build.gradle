@@ -3,7 +3,7 @@ plugins {
     id 'war'
 }
 
-group 'example'
+group 'exam'
 version '1.0-SNAPSHOT'
 
 repositories {

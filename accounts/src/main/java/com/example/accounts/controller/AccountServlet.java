@@ -127,12 +127,12 @@ public class AccountServlet extends HttpServlet {
         int accountId = Integer.parseInt(request.getParameter("accountId"));
         String accountCode = request.getParameter("accountCode");
         String accountName = request.getParameter("accountName");
-        while (!accountService.validationName(accountName)) {
-            System.out.println(accountName);
-            request.setAttribute("message", "Wrong pattern accountName !");
-            request.getParameter("accountName");
-            request.getRequestDispatcher("account/update.jsp").forward(request, response);
-        }
+//        while (!accountService.validationName(accountName)) {
+//            System.out.println(accountName);
+//            request.setAttribute("message", "Wrong pattern accountName !");
+//            request.getParameter("accountName");
+//            request.getRequestDispatcher("account/update.jsp").forward(request, response);
+//        }
         Date createDate = Date.valueOf((request.getParameter("createDate")));
         int savingAmount = Integer.parseInt(request.getParameter("amount"));
         Date depositDate = Date.valueOf(request.getParameter("depositDate"));
