@@ -76,7 +76,7 @@
 
                 <div class="form-group mt-2">
                     <button class="btn btn-warning" role="button">
-                        <a class="text-light" href="/house">Cancel</a>
+                        <a class="text-light" href="/houses">Cancel</a>
                     </button>
                     &nbsp;
                     &nbsp;

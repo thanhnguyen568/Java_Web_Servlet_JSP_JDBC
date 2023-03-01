@@ -55,11 +55,6 @@ public class HouseServlet extends HttpServlet {
         houseService.delete(houseCode);
 
         response.sendRedirect("houses");
-
-        List<House> list = houseService.selectAll();
-        request.setAttribute("listHouse", list);
-        request.getRequestDispatcher("house/list.jsp").forward(request, response);
-//        request.getRequestDispatcher("house/create.jsp").forward(request, response);
     }
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

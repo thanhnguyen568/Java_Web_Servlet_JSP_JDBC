@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afbe4935-e18e-4397-a5b4-8ca11e904166" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam/exam/controller/HouseServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam/exam/controller/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam/exam/model/House.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam/exam/repository/HouseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam/exam/repository/HouseRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam/exam/service/HouseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam/exam/service/HouseServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SS11_mvc/SS11_product/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SS12_JDBC/users/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../accounts/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/house/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/house/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/account/update.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../accounts/src/main/webapp/account/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../accounts/src/main/webapp/account/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam/exam/controller/HouseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam/exam/controller/HouseServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/house/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/house/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/house/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/house/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,6 +185,8 @@
       <workItem from="1677207211750" duration="223000" />
       <workItem from="1677238877433" duration="242000" />
       <workItem from="1677239234185" duration="8480000" />
+      <workItem from="1677255313470" duration="3625000" />
+      <workItem from="1677678006473" duration="1462000" />
     </task>
     <servers />
   </component>
