@@ -126,24 +126,24 @@
 <%--    <div class="modal-dialog" role="document">--%>
 <%--        <div class="modal-content">--%>
 <%--            <div class="modal-header">--%>
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Do you want to delete ?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">
-                    <%--Đổi id để gọi hàm--%>
-                    <a id="delLink" class="text-light" href="#">Delete</a>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+<%--                <h5 class="modal-title">Modal title</h5>--%>
+<%--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">--%>
+<%--                    <span aria-hidden="true">&times;</span>--%>
+<%--                </button>--%>
+<%--            </div>--%>
+<%--            <div class="modal-body">--%>
+<%--                Do you want to delete ?--%>
+<%--            </div>--%>
+<%--            <div class="modal-footer">--%>
+<%--                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--%>
+<%--                <button type="button" class="btn btn-primary">--%>
+<%--                    &lt;%&ndash;Đổi id để gọi hàm&ndash;%&gt;--%>
+<%--                    <a id="delLink" class="text-light" href="#">Delete</a>--%>
+<%--                </button>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
 
 <script src="/static/js/jquery-3.5.1.min.js"></script>
 <script src="/static/js/bootstrap.js"></script>
